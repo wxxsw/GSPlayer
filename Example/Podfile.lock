@@ -1,0 +1,14 @@
+PODS:
+  - GSPlayer (0.1.0)
+
+DEPENDENCIES:
+  - GSPlayer (from `../`)
+
+EXTERNAL SOURCES:
+  GSPlayer:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  GSPlayer: d73879b7ecc5f1a4ed7189ae559dcbb8d9a48479
+
+COCOAPODS: 0.39.0

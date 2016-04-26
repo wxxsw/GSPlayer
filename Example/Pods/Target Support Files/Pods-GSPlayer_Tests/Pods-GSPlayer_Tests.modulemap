@@ -1,0 +1,6 @@
+framework module Pods_GSPlayer_Tests {
+  umbrella header "Pods-GSPlayer_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

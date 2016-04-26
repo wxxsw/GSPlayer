@@ -4,9 +4,3 @@ use_frameworks!
 target 'GSPlayer_Example', :exclusive => true do
   pod 'GSPlayer', :path => '../'
 end
-
-target 'GSPlayer_Tests', :exclusive => true do
-  pod 'GSPlayer', :path => '../'
-
-  
-end

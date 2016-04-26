@@ -1,0 +1,6 @@
+framework module GSPlayer {
+  umbrella header "GSPlayer-umbrella.h"
+
+  export *
+  module * { export * }
+}

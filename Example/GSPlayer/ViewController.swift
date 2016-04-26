@@ -7,17 +7,16 @@
 //
 
 import UIKit
+import GSPlayer
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var playerView: GSPlayerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        playerView.setVideoURL(NSURL(string: "http://baobab.wdjcdn.com/14559682994064.mp4")!)
+        playerView.play()
     }
 
 }

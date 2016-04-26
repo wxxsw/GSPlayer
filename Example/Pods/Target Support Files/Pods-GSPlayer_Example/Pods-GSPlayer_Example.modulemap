@@ -1,0 +1,6 @@
+framework module Pods_GSPlayer_Example {
+  umbrella header "Pods-GSPlayer_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
