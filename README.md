@@ -11,6 +11,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+* Swift2.2
+
 ## Installation
 
 GSPlayer is available through [CocoaPods](http://cocoapods.org). To install
@@ -22,7 +24,7 @@ pod "GSPlayer"
 
 ## Author
 
-Ge Sen, wxxsw2@gmail.com
+Ge Sen, i@gesen.me
 
 ## License
 
