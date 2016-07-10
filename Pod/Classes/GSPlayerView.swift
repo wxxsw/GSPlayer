@@ -28,25 +28,9 @@
 
 import UIKit
 
-// MARK: Public Interface
-
-public protocol GSPlayerViewInterface {
+public class GSPlayerView: UIView {
     
-    func setVideoURL(URL: NSURL)
-    func setVideoURL(URL: NSURL,
-                     inTableView tableView: UITableView,
-                     atIndexPath indexPath: NSIndexPath)
-    
-    func play()
-    func pause()
-    func reset()
-}
-
-// MARK: -
-
-public class GSPlayerView: UIView, GSPlayerViewInterface {
-    
-    // MARK: Public Interface
+    // MARK: Public
     
     public func setVideoURL(URL: NSURL) {
         self.URL = URL
@@ -65,7 +49,7 @@ public class GSPlayerView: UIView, GSPlayerViewInterface {
     public func play() {
     
         guard let URL = URL else {
-            print("GSPlayerView ERROR: Not set videoURL properties")
+            print("GSPlayer ERROR: Not set videoURL!")
             return
         }
         
@@ -90,6 +74,7 @@ public class GSPlayerView: UIView, GSPlayerViewInterface {
     
     public override func removeFromSuperview() {
         super.removeFromSuperview()
+        GSPlayer.removePlayerFromView(self)
     }
     
     // MARK: Private

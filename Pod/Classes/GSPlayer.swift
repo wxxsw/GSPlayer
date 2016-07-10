@@ -44,8 +44,6 @@ class GSPlayer: AVPlayer {
     
     // MARK: Private
     
-    
-    
     // MARK: - Class Methods
     
     // MARK: Control
@@ -66,35 +64,6 @@ class GSPlayer: AVPlayer {
         NSObject.cancelPreviousPerformRequestsWithTarget(self)
     }
     
-    // MARK: PlayerView
-    
-    class func reusePlayerToView(view: UIView, withURL URL: NSURL) {
-        if player.isCurrentURL(URL) {
-            insertPlayerToView(view)
-        } else {
-            removePlayerFromView(view)
-        }
-    }
-    
-    class func insertPlayerToView(view: UIView) {
-        view.layer.addSublayer(player.layer)
-    }
-    
-    class func removePlayerFromView(view: UIView) {
-        for sublayer in view.layer.sublayers ?? [] {
-            if sublayer == player.layer {
-                sublayer.removeFromSuperlayer()
-                break
-            }
-        }
-    }
-    
-    class func layoutPlayerToFrame(frame: CGRect, withURL URL: NSURL?) {
-        if player.isCurrentURL(URL) {
-            GSPlayer.player.layer.frame = frame
-        }
-    }
-    
     // MARK: - Private Methods
     
     private func isCurrentURL(URL: NSURL?) -> Bool {
@@ -110,4 +79,37 @@ class GSPlayer: AVPlayer {
         self.URL = URL
     }
 
+}
+
+// MARK: - PlayerView
+
+extension GSPlayer {
+    
+    class func reusePlayerToView(view: UIView, withURL URL: NSURL) {
+        if player.isCurrentURL(URL) {
+            insertPlayerToView(view)
+        } else {
+            removePlayerFromView(view)
+        }
+    }
+    
+    class func insertPlayerToView(view: UIView) {
+        view.layer.addSublayer(player.layer)
+    }
+    
+    class func layoutPlayerToFrame(frame: CGRect, withURL URL: NSURL?) {
+        if player.isCurrentURL(URL) {
+            GSPlayer.player.layer.frame = frame
+        }
+    }
+    
+    class func removePlayerFromView(view: UIView) {
+        for sublayer in view.layer.sublayers ?? [] {
+            if sublayer == player.layer {
+                reset()
+                break
+            }
+        }
+    }
+    
 }

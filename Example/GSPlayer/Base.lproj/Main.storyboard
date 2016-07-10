@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A282b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="YaP-lX-hnL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="YaP-lX-hnL">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -34,22 +34,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZS-jw-aWB">
-                                <rect key="frame" x="137" y="240" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZS-jw-aWB">
+                                <rect key="frame" x="135" y="164" width="50" height="30"/>
+                                <state key="normal" title="Normal"/>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="push" id="N9J-B3-Z1K"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euu-Nk-FPt">
-                                <rect key="frame" x="137" y="283" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euu-Nk-FPt">
+                                <rect key="frame" x="125" y="244" width="70" height="30"/>
+                                <state key="normal" title="TableView"/>
                                 <connections>
                                     <segue destination="o4k-WD-Wo4" kind="push" id="qoz-hD-849"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nZS-jw-aWB" firstAttribute="top" secondItem="ZYg-8E-anm" secondAttribute="bottom" constant="100" id="5me-zv-Oco"/>
+                            <constraint firstItem="nZS-jw-aWB" firstAttribute="centerX" secondItem="Rce-Fd-lIt" secondAttribute="centerX" id="X01-DY-FEu"/>
+                            <constraint firstItem="euu-Nk-FPt" firstAttribute="top" secondItem="nZS-jw-aWB" secondAttribute="bottom" constant="50" id="lOh-a0-WpW"/>
+                            <constraint firstItem="euu-Nk-FPt" firstAttribute="centerX" secondItem="Rce-Fd-lIt" secondAttribute="centerX" id="vJD-Ch-Lbw"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7y3-hh-jU2"/>
                 </viewController>
@@ -91,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10" y="384"/>
+            <point key="canvasLocation" x="203" y="61"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="hHg-on-OAe">
@@ -106,7 +112,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="226-VI-jvb" id="Awq-ce-zvO">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="149.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IBV-uu-ur1" customClass="GSPlayerView" customModule="GSPlayer">
@@ -135,7 +141,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9s-WO-10W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10" y="1018"/>
+            <point key="canvasLocation" x="203" y="693"/>
         </scene>
     </scenes>
 </document>
