@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BasicViewController" customModule="GSPlayer_Example" customModuleProvider="target">
+            <connections>
+                <outlet property="muteButton" destination="2Vn-2w-ydz" id="fNS-M4-g2Y"/>
+                <outlet property="playButton" destination="gBa-Qj-5jC" id="UOV-mB-d4I"/>
+                <outlet property="playerView" destination="n1s-b3-VTR" id="q5E-3W-tGS"/>
+                <outlet property="stateLabel" destination="I8w-ZH-Wan" id="MaK-3i-3G1"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Put the cover here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUm-Yu-5im">
+                    <rect key="frame" x="0.0" y="44" width="414" height="200"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="40"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1s-b3-VTR" customClass="VideoPlayerView" customModule="GSPlayer">
+                    <rect key="frame" x="0.0" y="44" width="414" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="9na-xC-T5k"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ffc-E7-zeS">
+                    <rect key="frame" x="20" y="254" width="374" height="128"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8w-ZH-Wan">
+                            <rect key="frame" x="0.0" y="0.0" width="42" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="QFl-9t-VzN"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GAp-xI-mSS">
+                            <rect key="frame" x="0.0" y="40" width="179" height="44"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBa-Qj-5jC">
+                                    <rect key="frame" x="0.0" y="0.0" width="74" height="44"/>
+                                    <state key="normal" title="Play/Pause"/>
+                                    <connections>
+                                        <action selector="tapPlay:" destination="-1" eventType="touchUpInside" id="e2R-6h-7q3"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vn-2w-ydz">
+                                    <rect key="frame" x="94" y="0.0" width="85" height="44"/>
+                                    <state key="normal" title="Toggle Mute"/>
+                                    <connections>
+                                        <action selector="tapMute:" destination="-1" eventType="touchUpInside" id="yam-Yd-TLY"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="cwn-f0-GAY"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="joc-lY-WGK">
+                            <rect key="frame" x="0.0" y="84" width="237" height="44"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ym-cs-Pr1">
+                                    <rect key="frame" x="0.0" y="0.0" width="71" height="44"/>
+                                    <state key="normal" title="Fullscreen"/>
+                                    <connections>
+                                        <action selector="tapFullscreen:" destination="-1" eventType="touchUpInside" id="gn1-oS-1Fz"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rE1-9O-3a5">
+                                    <rect key="frame" x="91" y="0.0" width="146" height="44"/>
+                                    <state key="normal" title="Landscape fullscreen"/>
+                                    <connections>
+                                        <action selector="tapLandscapeFullscreen:" destination="-1" eventType="touchUpInside" id="JWA-KV-j2u"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="0xj-XI-n1W"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="eUm-Yu-5im" firstAttribute="top" secondItem="n1s-b3-VTR" secondAttribute="top" id="08b-HS-BEu"/>
+                <constraint firstItem="n1s-b3-VTR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="0DR-I5-jVR"/>
+                <constraint firstItem="ffc-E7-zeS" firstAttribute="top" secondItem="n1s-b3-VTR" secondAttribute="bottom" constant="10" id="WyO-43-0m1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="n1s-b3-VTR" secondAttribute="trailing" id="bla-0Q-bcp"/>
+                <constraint firstItem="n1s-b3-VTR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bqc-hX-DaH"/>
+                <constraint firstItem="eUm-Yu-5im" firstAttribute="leading" secondItem="n1s-b3-VTR" secondAttribute="leading" id="kXz-p5-d0w"/>
+                <constraint firstItem="ffc-E7-zeS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="oew-Ds-5BM"/>
+                <constraint firstItem="eUm-Yu-5im" firstAttribute="trailing" secondItem="n1s-b3-VTR" secondAttribute="trailing" id="ofK-od-QMu"/>
+                <constraint firstItem="eUm-Yu-5im" firstAttribute="bottom" secondItem="n1s-b3-VTR" secondAttribute="bottom" id="pPe-QI-X4n"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ffc-E7-zeS" secondAttribute="trailing" constant="20" id="uLl-X8-3gv"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>

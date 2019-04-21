@@ -1,25 +1,21 @@
 {
   "name": "GSPlayer",
-  "version": "0.1.0",
-  "summary": "A short description of GSPlayer.",
-  "description": "",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/GSPlayer",
+  "version": "1.0.0",
+  "summary": "⏯ Video player, support for caching, fullscreen transition and custom control view. 视频播放器，支持边下边播、全屏转场和自定义控制层",
+  "homepage": "https://github.com/wxxsw/GSPlayer",
   "license": "MIT",
   "authors": {
-    "Ge Sen": "wxxsw2@gmail.com"
+    "Gesen": "i@gesen.me"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/GSPlayer.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/wxxsw/GSPlayer.git",
+    "tag": "#{s.version}"
   },
+  "source_files": "GSPlayer/Classes/**/*.swift",
   "platforms": {
-    "ios": "8.0"
+    "ios": "10.0"
   },
-  "requires_arc": true,
-  "source_files": "Pod/Classes/**/*",
-  "resource_bundles": {
-    "GSPlayer": [
-      "Pod/Assets/*.png"
-    ]
-  }
+  "swift_versions": [
+    "5.0"
+  ]
 }

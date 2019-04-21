@@ -7,32 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1823D6351CB6697C009140A7 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1823D6341CB6697C009140A7 /* TableViewController.swift */; };
-		1823D6371CB669C9009140A7 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1823D6361CB669C9009140A7 /* TableViewCell.swift */; };
+		1CBF0E2C226C4CCB00E342EF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF0E2B226C4CCB00E342EF /* MenuViewController.swift */; };
+		1CBF0E2F226C4D9D00E342EF /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF0E2D226C4D9D00E342EF /* BasicViewController.swift */; };
+		1CBF0E30226C4D9D00E342EF /* BasicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF0E2E226C4D9D00E342EF /* BasicViewController.xib */; };
+		1CBF0E33226C586D00E342EF /* BasicFullscreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF0E31226C586D00E342EF /* BasicFullscreenViewController.swift */; };
+		1CBF0E34226C586D00E342EF /* BasicFullscreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF0E32226C586D00E342EF /* BasicFullscreenViewController.xib */; };
+		3347FE78789DDBCC8CDBD341 /* Pods_GSPlayer_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B03AFD3BCF0756AE68A61C1 /* Pods_GSPlayer_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
-		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		F75A6208CBF04C56BFCA7438 /* Pods_GSPlayer_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFA1BDF66A517F7847FCF54B /* Pods_GSPlayer_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0E11828DBD496E10104122FD /* GSPlayer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GSPlayer.podspec; path = ../GSPlayer.podspec; sourceTree = "<group>"; };
-		1823D6341CB6697C009140A7 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		1823D6361CB669C9009140A7 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		3C605F1689E7B7DBB160E7C5 /* Pods-GSPlayer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSPlayer_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GSPlayer_Example/Pods-GSPlayer_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		1CBF0E2B226C4CCB00E342EF /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		1CBF0E2D226C4D9D00E342EF /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
+		1CBF0E2E226C4D9D00E342EF /* BasicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicViewController.xib; sourceTree = "<group>"; };
+		1CBF0E31226C586D00E342EF /* BasicFullscreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicFullscreenViewController.swift; sourceTree = "<group>"; };
+		1CBF0E32226C586D00E342EF /* BasicFullscreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicFullscreenViewController.xib; sourceTree = "<group>"; };
+		1E4343CA6DBE1E3C6EF43036 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		348B1146AD72951424B5F438 /* Pods-GSPlayer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSPlayer_Example.release.xcconfig"; path = "Target Support Files/Pods-GSPlayer_Example/Pods-GSPlayer_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* GSPlayer_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GSPlayer_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		7B2D57D224075D24331C920F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		87C4DA990122D5505E14E118 /* Pods-GSPlayer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSPlayer_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-GSPlayer_Example/Pods-GSPlayer_Example.release.xcconfig"; sourceTree = "<group>"; };
-		DFA1BDF66A517F7847FCF54B /* Pods_GSPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GSPlayer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EBCFB2A75DD2C4BD8126A6FA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		7B03AFD3BCF0756AE68A61C1 /* Pods_GSPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GSPlayer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		824A0193907F1D0520A6B309 /* Pods-GSPlayer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSPlayer_Example.debug.xcconfig"; path = "Target Support Files/Pods-GSPlayer_Example/Pods-GSPlayer_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		89641FF41CC203BF8E9775A2 /* GSPlayer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GSPlayer.podspec; path = ../GSPlayer.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		FA1B67D49EFE8126E638ECBD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,21 +42,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F75A6208CBF04C56BFCA7438 /* Pods_GSPlayer_Example.framework in Frameworks */,
+				3347FE78789DDBCC8CDBD341 /* Pods_GSPlayer_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17B92A4B1655B2516D7B851C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B03AFD3BCF0756AE68A61C1 /* Pods_GSPlayer_Example.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1CBF0E2A226C40F500E342EF /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				1CBF0E2D226C4D9D00E342EF /* BasicViewController.swift */,
+				1CBF0E2E226C4D9D00E342EF /* BasicViewController.xib */,
+				1CBF0E31226C586D00E342EF /* BasicFullscreenViewController.swift */,
+				1CBF0E32226C586D00E342EF /* BasicFullscreenViewController.xib */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for GSPlayer */,
 				607FACD11AFB9204008FA782 /* Products */,
-				6E350CCD5CCE56FAD2B9160F /* Pods */,
-				EA01983AA1E7E0119CAC711B /* Frameworks */,
+				E25D1C00CF611B37698DB88F /* Pods */,
+				17B92A4B1655B2516D7B851C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,12 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				1823D6341CB6697C009140A7 /* TableViewController.swift */,
-				1823D6361CB669C9009140A7 /* TableViewCell.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				1CBF0E2B226C4CCB00E342EF /* MenuViewController.swift */,
+				1CBF0E2A226C40F500E342EF /* Basic */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for GSPlayer";
@@ -85,7 +102,9 @@
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
+				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -93,28 +112,20 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				0E11828DBD496E10104122FD /* GSPlayer.podspec */,
-				EBCFB2A75DD2C4BD8126A6FA /* README.md */,
-				7B2D57D224075D24331C920F /* LICENSE */,
+				89641FF41CC203BF8E9775A2 /* GSPlayer.podspec */,
+				FA1B67D49EFE8126E638ECBD /* README.md */,
+				1E4343CA6DBE1E3C6EF43036 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		6E350CCD5CCE56FAD2B9160F /* Pods */ = {
+		E25D1C00CF611B37698DB88F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3C605F1689E7B7DBB160E7C5 /* Pods-GSPlayer_Example.debug.xcconfig */,
-				87C4DA990122D5505E14E118 /* Pods-GSPlayer_Example.release.xcconfig */,
+				824A0193907F1D0520A6B309 /* Pods-GSPlayer_Example.debug.xcconfig */,
+				348B1146AD72951424B5F438 /* Pods-GSPlayer_Example.release.xcconfig */,
 			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		EA01983AA1E7E0119CAC711B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DFA1BDF66A517F7847FCF54B /* Pods_GSPlayer_Example.framework */,
-			);
-			name = Frameworks;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,12 +135,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "GSPlayer_Example" */;
 			buildPhases = (
-				F823EF879F824748BD8A5443 /* Check Pods Manifest.lock */,
+				236584CBC1A7B560BF91702F /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				43785416693ABD5E9FBDC095 /* Embed Pods Frameworks */,
-				224C54F51945366835FBCCD4 /* Copy Pods Resources */,
+				656635D53103870FE96E7585 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -146,18 +156,21 @@
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = CocoaPods;
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = Gesen;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = DBTR8NXFB4;
+						LastSwiftMigration = 1020;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "GSPlayer" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -178,58 +191,54 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				1CBF0E34226C586D00E342EF /* BasicFullscreenViewController.xib in Resources */,
+				1CBF0E30226C4D9D00E342EF /* BasicViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		224C54F51945366835FBCCD4 /* Copy Pods Resources */ = {
+		236584CBC1A7B560BF91702F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
+			inputFileListPaths = (
 			);
-			name = "Copy Pods Resources";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GSPlayer_Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GSPlayer_Example/Pods-GSPlayer_Example-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		43785416693ABD5E9FBDC095 /* Embed Pods Frameworks */ = {
+		656635D53103870FE96E7585 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GSPlayer_Example/Pods-GSPlayer_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GSPlayer/GSPlayer.framework",
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GSPlayer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GSPlayer_Example/Pods-GSPlayer_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F823EF879F824748BD8A5443 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GSPlayer_Example/Pods-GSPlayer_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -239,24 +248,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				1823D6371CB669C9009140A7 /* TableViewCell.swift in Sources */,
-				1823D6351CB6697C009140A7 /* TableViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				1CBF0E2F226C4D9D00E342EF /* BasicViewController.swift in Sources */,
+				1CBF0E33226C586D00E342EF /* BasicFullscreenViewController.swift in Sources */,
+				1CBF0E2C226C4CCB00E342EF /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -272,17 +273,28 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -305,7 +317,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -317,17 +329,28 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -343,36 +366,49 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C605F1689E7B7DBB160E7C5 /* Pods-GSPlayer_Example.debug.xcconfig */;
+			baseConfigurationReference = 824A0193907F1D0520A6B309 /* Pods-GSPlayer_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DBTR8NXFB4;
 				INFOPLIST_FILE = GSPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.gesen.GSPlayer-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87C4DA990122D5505E14E118 /* Pods-GSPlayer_Example.release.xcconfig */;
+			baseConfigurationReference = 348B1146AD72951424B5F438 /* Pods-GSPlayer_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DBTR8NXFB4;
 				INFOPLIST_FILE = GSPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.gesen.GSPlayer-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

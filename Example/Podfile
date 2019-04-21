@@ -1,6 +1,7 @@
-source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.0'
+
 use_frameworks!
 
-target 'GSPlayer_Example', :exclusive => true do
+target 'GSPlayer_Example' do
   pod 'GSPlayer', :path => '../'
 end

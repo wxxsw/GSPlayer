@@ -1,29 +1,15 @@
-#
-# Be sure to run `pod lib lint GSPlayer.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
-
-  s.name             = "GSPlayer"
-  s.version          = "0.1.0"
-  s.summary          = "Swift, video player, based on AVPlayer."
-
-  s.homepage         = "https://github.com/wxxsw/GSPlayer"
-
-  s.license          = 'MIT'
-  s.author           = { "Ge Sen" => "wxxsw2@gmail.com" }
-  s.source           = { :git => "https://github.com/wxxsw/GSPlayer.git", :tag => s.version.to_s }
-
-  s.platform     = :ios, '8.0'
-  s.requires_arc = true
-
-  s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'GSPlayer' => ['Pod/Assets/*.png']
-  }
-
+  s.name         = 'GSPlayer'
+  s.version      = '0.2.0'
+  s.summary      = '⏯ Video player, support for caching, fullscreen transition and custom control view. 视频播放器，支持边下边播、全屏转场和自定义控制层'
+  s.homepage     = 'https://github.com/wxxsw/GSPlayer'
+  
+  s.license      = 'MIT'
+  s.author       = { 'Gesen' => 'i@gesen.me' }
+  s.source       = { :git => 'https://github.com/wxxsw/GSPlayer.git', :tag => '#{s.version}' }
+  
+  s.source_files = 'GSPlayer/Classes/**/*.swift'
+  
+  s.ios.deployment_target = '10.0'
+  s.swift_versions = ['5.0']
 end

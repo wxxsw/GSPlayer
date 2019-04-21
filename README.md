@@ -1,30 +1,30 @@
-# GSPlayer
+![GSPlayer](https://github.com/wxxsw/GSPlayer/blob/master/ScreenShots/logo.png)
 
-[![CI Status](http://img.shields.io/travis/Ge Sen/GSPlayer.svg?style=flat)](https://travis-ci.org/Ge Sen/GSPlayer)
-[![Version](https://img.shields.io/cocoapods/v/GSPlayer.svg?style=flat)](http://cocoapods.org/pods/GSPlayer)
-[![License](https://img.shields.io/cocoapods/l/GSPlayer.svg?style=flat)](http://cocoapods.org/pods/GSPlayer)
-[![Platform](https://img.shields.io/cocoapods/p/GSPlayer.svg?style=flat)](http://cocoapods.org/pods/GSPlayer)
+<p align="center">
+<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/language-swift5-f48041.svg?style=flat"></a>
+<a href="https://developer.apple.com/ios"><img src="https://img.shields.io/badge/platform-iOS10+-blue.svg?style=flat"></a>
+<a href="http://cocoadocs.org/docsets/GSPlayer"><img src="https://img.shields.io/badge/Cocoapods-compatible-4BC51D.svg?style=flat"></a>
+<a href="https://github.com/wxxsw/GSPlayer/blob/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat"></a>
+</p>
 
-## Usage
+## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
 
-* Swift2.2
-
 ## Installation
 
-GSPlayer is available through [CocoaPods](http://cocoapods.org). To install
+GSPlayer is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "GSPlayer"
+pod 'GSPlayer'
 ```
 
 ## Author
 
-Ge Sen, i@gesen.me
+Gesen, i@gesen.me
 
 ## License
 
