@@ -15,8 +15,49 @@
 - [x] Can preload multiple videos at any time.
 - [x] Can be embedded into UITableView and UICollectionView.
 - [x] Provide full screen transition.
+- [ ] Complete Demo.
 
-## Requirements
+## Quick Start
+
+1. Add `VideoPlayerView` to the interface.
+```swift
+let playerView = VideoPlayerView()
+view.addSubview(playerView)
+
+// Or in IB, specify the type of custom View as VideoPlayerView.
+```
+
+2. Play Video.
+```swift
+playerView.play(for: URL(string: "video url...")!)
+```
+
+3. Pause/Resume Video.
+```swift
+if playerView.state == .playing {
+    playerView.pause(reason: .userInteraction)
+} else {
+    playerView.resume()
+}
+```
+
+4. Update control UI based on playback status.
+```swift
+playerView.stateDidChanged = { state in
+    switch state {
+    case .none:
+        print("none")
+    case .error(let error):
+        print("error - \(error.localizedDescription)")
+    case .loading:
+        print("loading")
+    case .paused(let playing, let buffering):
+        print("paused - progress \(Int(playing * 100))% buffering \(Int(buffering * 100))%")
+    case .playing:
+        print("playing")
+    }
+}
+```
 
 ## Installation
 
