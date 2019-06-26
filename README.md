@@ -61,9 +61,32 @@ playerView.stateDidChanged = { state in
 
 ## Documents
 
+### Cache
+
+Get the total size of the video cache.
+```swift
+VideoCacheManager.calculateCachedSize()
+```
+
+Clean up all caches.
+```swift
+VideoCacheManager.cleanAllCache()
+```
+
+### Preload
+
+Set the video URL to be preloaded. Preloading will automatically cache a short segment of the beginning of the video and decide whether to start or pause the preload based on the buffering of the currently playing video.
+```swift
+VideoPreloadManager.shared.set(waiting: [URL])
+```
+
+### Fullscreen
+
+See demo.
+
 ### PlayerView
 
-##### Property
+#### Property
 
 An object that manages a player's visual output.
 ```swift
@@ -155,7 +178,7 @@ Video volume, only for this instance.
 public var volume: Double { get set }
 ```
 
-##### Callback
+#### Callback
 
 Playback status changes, such as from play to pause.
 ```swift
@@ -167,7 +190,7 @@ Replay after playing to the end.
 public var replay: (() -> Void)?
 ```
 
-##### Method
+#### Method
 
 Play a video of the specified url.
 ```swift
@@ -183,29 +206,6 @@ Continue playing video.
 ```swift
 func resume()
 ```
-
-### Cache
-
-Get the total size of the video cache.
-```swift
-VideoCacheManager.calculateCachedSize()
-```
-
-Clean up all caches.
-```swift
-VideoCacheManager.cleanAllCache()
-```
-
-### Preload
-
-Set the video URL to be preloaded. Preloading will automatically cache a short segment of the beginning of the video and decide whether to start or pause the preload based on the buffering of the currently playing video.
-```swift
-VideoPreloadManager.shared.set(waiting: [URL])
-```
-
-### Fullscreen
-
-See demo.
 
 ## Installation
 
