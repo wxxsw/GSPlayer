@@ -59,6 +59,129 @@ playerView.stateDidChanged = { state in
 }
 ```
 
+## Documents
+
+### Property
+
+An object that manages a player's visual output.
+```swift
+public let playerLayer: AVPlayerLayer { get }
+```
+
+Get current video status.
+```swift
+public enum State {
+
+    /// None
+    case none
+
+    /// From the first load to get the first frame of the video
+    case loading
+
+    /// Playing now
+    case playing
+
+    /// Pause, will be called repeatedly when the buffer progress changes
+    case paused(playing: Double, buffering: Double)
+
+    /// An error occurred and cannot continue playing
+    case error(NSError)
+}
+
+public var state: State { get }
+```
+
+The reason the video was paused.
+```swift
+public enum PausedReason {
+
+    /// Pause because the player is not visible, stateDidChanged is not called when the buffer progress changes
+    case hidden
+
+    /// Pause triggered by user interaction, default behavior
+    case userInteraction
+
+    /// Waiting for resource completion buffering
+    case waitingKeepUp
+}
+
+public var pausedReason: PausedReason { get }
+```
+
+Number of replays.
+```swift
+public var replayCount: Int { get }
+```
+
+Played progress, value range 0-1.
+```swift
+public var playing: Double { get }
+```
+
+Played length in seconds.
+```swift
+public var currentDuration: Double { get }
+```
+
+Buffered progress, value range 0-1.
+```swift
+public var buffering: Double { get }
+```
+
+Buffered length in seconds.
+```swift
+public var currentBufferDuration: Double { get }
+```
+
+Total video duration in seconds.
+```swift
+public var totalDuration: Double { get }
+```
+
+The total watch time of this video, in seconds.
+```swift
+public var watchDuration: Double { get }
+```
+
+Whether the video is muted, only for this instance.
+```swift
+public var isMuted: Bool { get set }
+```
+
+Video volume, only for this instance.
+```swift
+public var volume: Double { get set }
+```
+
+### Callback
+
+Playback status changes, such as from play to pause.
+```swift
+public var stateDidChanged: ((State) -> Void)?
+```
+
+Replay after playing to the end.
+```swift
+public var replay: (() -> Void)?
+```
+
+### Method
+
+Play a video of the specified url.
+```swift
+func play(for url: URL)
+```
+
+Pause video.
+```swift
+func pause(reason: PausedReason)
+```
+
+Continue playing video.
+```swift
+func resume()
+```
+
 ## Installation
 
 GSPlayer is available through [CocoaPods](https://cocoapods.org). To install
