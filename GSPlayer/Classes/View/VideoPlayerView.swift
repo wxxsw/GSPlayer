@@ -12,64 +12,95 @@ import AVFoundation
 public class VideoPlayerView: UIView {
     
     public enum State {
+        
+        /// None
         case none
+        
+        /// From the first load to get the first frame of the video
         case loading
+        
+        /// Playing now
         case playing
+        
+        /// Pause, will be called repeatedly when the buffer progress changes
         case paused(playing: Double, buffering: Double)
+        
+        /// An error occurred and cannot continue playing
         case error(NSError)
     }
     
     public enum PausedReason {
+        
+        /// Pause because the player is not visible, stateDidChanged is not called when the buffer progress changes
         case hidden
+        
+        /// Pause triggered by user interaction, default behavior
         case userInteraction
+        
+        /// Waiting for resource completion buffering
         case waitingKeepUp
     }
     
+    /// An object that manages a player's visual output.
     public let playerLayer = AVPlayerLayer()
     
-    public var replay: (() -> Void)?
+    /// Playback status changes, such as from play to pause.
     public var stateDidChanged: ((State) -> Void)?
     
+    /// Replay after playing to the end.
+    public var replay: (() -> Void)?
+    
+    /// Get current video status.
     public private(set) var state: State = .none {
         didSet { stateDidChanged(state: state, previous: oldValue) }
     }
     
+    /// The reason the video was paused.
     public private(set) var pausedReason: PausedReason = .waitingKeepUp
     
+    /// Number of replays.
     public private(set) var replayCount: Int = 0
     
-    public var buffering: Double {
-        return isLoaded ? player?.buffering ?? 0 : 0
+    /// Played progress, value range 0-1.
+    public var playing: Double {
+        return isLoaded ? player?.playing ?? 0 : 0
     }
     
-    public var currentBufferDuration: Double {
-        return isLoaded ? player?.currentBufferDuration ?? 0 : 0
-    }
-
+    /// Played length in seconds.
     public var currentDuration: Double {
         return isLoaded ? player?.currentDuration ?? 0 : 0
     }
     
+    /// Buffered progress, value range 0-1.
+    public var buffering: Double {
+        return isLoaded ? player?.buffering ?? 0 : 0
+    }
+    
+    /// Buffered length in seconds.
+    public var currentBufferDuration: Double {
+        return isLoaded ? player?.currentBufferDuration ?? 0 : 0
+    }
+    
+    /// Total video duration in seconds.
+    public var totalDuration: Double {
+        return isLoaded ? player?.totalDuration ?? 0 : 0
+    }
+    
+    /// The total watch time of this video, in seconds.
+    public var watchDuration: Double {
+        return isLoaded ? currentDuration + totalDuration * Double(replayCount) : 0
+    }
+    
+    /// Whether the video is muted, only for this instance.
     public var isMuted: Bool {
         get { return player?.isMuted ?? false }
         set { player?.isMuted = newValue }
     }
     
-    public var playing: Double {
-        return isLoaded ? player?.playing ?? 0 : 0
-    }
-    
-    public var totalDuration: Double {
-        return isLoaded ? player?.totalDuration ?? 0 : 0
-    }
-    
+    /// Video volume, only for this instance.
     public var volume: Double {
         get { return player?.volume.double ?? 0 }
         set { player?.volume = newValue.float }
-    }
-    
-    public var watchTime: Double {
-        return isLoaded ? currentDuration + totalDuration * Double(replayCount) : 0
     }
     
     private var isLoaded = false
@@ -117,6 +148,9 @@ public class VideoPlayerView: UIView {
 
 public extension VideoPlayerView {
     
+    /// Play a video of the specified url.
+    ///
+    /// - Parameter url: Can be a local or remote URL
     func play(for url: URL) {
         
         observe(player: nil)
@@ -150,14 +184,18 @@ public extension VideoPlayerView {
         observe(playerItem: playerItem)
     }
     
-    func resume() {
-        pausedReason = .waitingKeepUp
-        player?.play()
-    }
-
+    /// Pause video.
+    ///
+    /// - Parameter reason: Reason for pause
     func pause(reason: PausedReason) {
         pausedReason = reason
         player?.pause()
+    }
+    
+    /// Continue playing video.
+    func resume() {
+        pausedReason = .waitingKeepUp
+        player?.play()
     }
     
 }
