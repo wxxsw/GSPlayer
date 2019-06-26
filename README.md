@@ -7,9 +7,14 @@
 <a href="https://github.com/wxxsw/GSPlayer/blob/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat"></a>
 </p>
 
-## Example
+## Features
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+- [x] Fully customizable UI.
+- [x] Easy to use API and callbacks.
+- [x] Built-in caching mechanism to support playback while downloading.
+- [x] Can preload multiple videos at any time.
+- [x] Can be embedded into UITableView and UICollectionView.
+- [x] Provide full screen transition.
 
 ## Requirements
 
@@ -22,10 +27,16 @@ it, simply add the following line to your Podfile:
 pod 'GSPlayer'
 ```
 
-## Author
+## Contribution
 
-Gesen, i@gesen.me
+### Issue
+
+If you find a bug or need a help, you can [create a issue](https://github.com/wxxsw/GSPlayer/issues/new)
+
+### Pull Request
+
+We are happy to accept pull requests :D. But please make sure it's needed by most developers and make it simple to use. If you are not sure, create an issue and we can discuss it before you get to coding.
 
 ## License
 
-GSPlayer is available under the MIT license. See the LICENSE file for more info.
+The MIT License (MIT)
