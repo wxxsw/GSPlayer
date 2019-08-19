@@ -198,6 +198,14 @@ public extension VideoPlayerView {
         player?.play()
     }
     
+    func addBoundaryTimeObserver(forTimes times: [CMTime], queue: DispatchQueue? = nil, using: @escaping () -> Void) {
+        player?.addBoundaryTimeObserver(forTimes: times.map { NSValue(time: $0) }, queue: queue, using: using)
+    }
+    
+    func addPeriodicTimeObserver(forInterval interval: CMTime, queue: DispatchQueue? = nil, using: @escaping (CMTime) -> Void) {
+        player?.addPeriodicTimeObserver(forInterval: interval, queue: queue, using: using)
+    }
+    
 }
 
 private extension VideoPlayerView {

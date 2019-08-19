@@ -1,5 +1,5 @@
 PODS:
-  - GSPlayer (1.0.0)
+  - GSPlayer (0.2.1)
 
 DEPENDENCIES:
   - GSPlayer (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  GSPlayer: 0f93bf20de01fc31d84be88441ba57a7da0b4599
+  GSPlayer: 4f14adb9200bcba414876dbda8945dad38f252b9
 
 PODFILE CHECKSUM: a49c9158b72ea6343593d7347f4e8162b510b6bf
 
-COCOAPODS: 1.7.0.beta.3
+COCOAPODS: 1.7.5

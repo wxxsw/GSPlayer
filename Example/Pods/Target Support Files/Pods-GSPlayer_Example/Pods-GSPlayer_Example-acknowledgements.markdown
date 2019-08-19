@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## GSPlayer
 
-Copyright (c) 2016 Ge Sen <wxxsw2@gmail.com>
+Copyright (c) 2019 Gesen <i@gesen.me>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
