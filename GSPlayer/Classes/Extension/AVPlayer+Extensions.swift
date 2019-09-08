@@ -10,8 +10,8 @@ import AVFoundation
 
 public extension AVPlayer {
     
-    var buffering: Double {
-        return currentItem?.buffering ?? -1
+    var bufferProgress: Double {
+        return currentItem?.bufferProgress ?? -1
     }
     
     var currentBufferDuration: Double {
@@ -31,8 +31,8 @@ public extension AVPlayer {
         return UIImage(cgImage: cgImage)
     }
     
-    var playing: Double {
-        return currentItem?.playing ?? -1
+    var playProgress: Double {
+        return currentItem?.playProgress ?? -1
     }
     
     var totalDuration: Double {

@@ -10,7 +10,7 @@ import AVFoundation
 
 public extension AVPlayerItem {
     
-    var buffering: Double {
+    var bufferProgress: Double {
         return currentBufferDuration / totalDuration
     }
     
@@ -23,7 +23,7 @@ public extension AVPlayerItem {
         return Double(CMTimeGetSeconds(currentTime()))
     }
     
-    var playing: Double {
+    var playProgress: Double {
         return currentDuration / totalDuration
     }
     

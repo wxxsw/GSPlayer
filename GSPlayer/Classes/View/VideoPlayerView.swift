@@ -23,7 +23,7 @@ public class VideoPlayerView: UIView {
         case playing
         
         /// Pause, will be called repeatedly when the buffer progress changes
-        case paused(playing: Double, buffering: Double)
+        case paused(playProgress: Double, bufferProgress: Double)
         
         /// An error occurred and cannot continue playing
         case error(NSError)
@@ -44,12 +44,6 @@ public class VideoPlayerView: UIView {
     /// An object that manages a player's visual output.
     public let playerLayer = AVPlayerLayer()
     
-    /// Playback status changes, such as from play to pause.
-    public var stateDidChanged: ((State) -> Void)?
-    
-    /// Replay after playing to the end.
-    public var replay: (() -> Void)?
-    
     /// Get current video status.
     public private(set) var state: State = .none {
         didSet { stateDidChanged(state: state, previous: oldValue) }
@@ -61,9 +55,33 @@ public class VideoPlayerView: UIView {
     /// Number of replays.
     public private(set) var replayCount: Int = 0
     
+    /// Whether the video will be automatically replayed until the end of the video playback.
+    public var isAutoReplay: Bool = true
+    
+    /// Play to the end time.
+    public var playToEndTime: (() -> Void)?
+    
+    /// Playback status changes, such as from play to pause.
+    public var stateDidChanged: ((State) -> Void)?
+    
+    /// Replay after playing to the end.
+    public var replay: (() -> Void)?
+    
+    /// Whether the video is muted, only for this instance.
+    public var isMuted: Bool {
+        get { return player?.isMuted ?? false }
+        set { player?.isMuted = newValue }
+    }
+    
+    /// Video volume, only for this instance.
+    public var volume: Double {
+        get { return player?.volume.double ?? 0 }
+        set { player?.volume = newValue.float }
+    }
+    
     /// Played progress, value range 0-1.
-    public var playing: Double {
-        return isLoaded ? player?.playing ?? 0 : 0
+    public var playProgress: Double {
+        return isLoaded ? player?.playProgress ?? 0 : 0
     }
     
     /// Played length in seconds.
@@ -72,8 +90,8 @@ public class VideoPlayerView: UIView {
     }
     
     /// Buffered progress, value range 0-1.
-    public var buffering: Double {
-        return isLoaded ? player?.buffering ?? 0 : 0
+    public var bufferProgress: Double {
+        return isLoaded ? player?.bufferProgress ?? 0 : 0
     }
     
     /// Buffered length in seconds.
@@ -91,21 +109,10 @@ public class VideoPlayerView: UIView {
         return isLoaded ? currentDuration + totalDuration * Double(replayCount) : 0
     }
     
-    /// Whether the video is muted, only for this instance.
-    public var isMuted: Bool {
-        get { return player?.isMuted ?? false }
-        set { player?.isMuted = newValue }
-    }
-    
-    /// Video volume, only for this instance.
-    public var volume: Double {
-        get { return player?.volume.double ?? 0 }
-        set { player?.volume = newValue.float }
-    }
-    
     private var isLoaded = false
     private var isReplay = false
     
+    private var playerURL: URL?
     private var playerBufferingObservation: NSKeyValueObservation?
     private var playerItemKeepUpObservation: NSKeyValueObservation?
     private var playerItemStatusObservation: NSKeyValueObservation?
@@ -152,6 +159,11 @@ public extension VideoPlayerView {
     ///
     /// - Parameter url: Can be a local or remote URL
     func play(for url: URL) {
+        guard playerURL != url else {
+            pausedReason = .waitingKeepUp
+            player?.play()
+            return
+        }
         
         observe(player: nil)
         observe(playerItem: nil)
@@ -166,6 +178,7 @@ public extension VideoPlayerView {
         playerItem.canUseNetworkResourcesForLiveStreamingWhilePaused = true
         
         self.player = player
+        self.playerURL = url
         self.pausedReason = .waitingKeepUp
         self.replayCount = 0
         self.isLoaded = false
@@ -278,14 +291,14 @@ private extension VideoPlayerView {
             switch player.timeControlStatus {
             case .paused:
                 guard !self.isReplay else { break }
-                self.state = .paused(playing: self.playing, buffering: self.buffering)
+                self.state = .paused(playProgress: self.playProgress, bufferProgress: self.bufferProgress)
                 if self.pausedReason == .waitingKeepUp { player.play() }
             case .waitingToPlayAtSpecifiedRate:
                 break
             case .playing:
                 if self.playerLayer.isReadyForDisplay, player.rate > 0 {
                     self.isLoaded = true
-                    if self.playing == 0, self.isReplay { self.isReplay = false; break }
+                    if self.playProgress == 0, self.isReplay { self.isReplay = false; break }
                     self.state = .playing
                 }
             @unknown default:
@@ -305,10 +318,10 @@ private extension VideoPlayerView {
         
         playerBufferingObservation = playerItem.observe(\.loadedTimeRanges) { [unowned self] item, _ in
             if case .paused = self.state, self.pausedReason != .hidden {
-                self.state = .paused(playing: self.playing, buffering: self.buffering)
+                self.state = .paused(playProgress: self.playProgress, bufferProgress: self.bufferProgress)
             }
             
-            if self.buffering >= 0.99 || (self.currentBufferDuration - self.currentDuration) > 3 {
+            if self.bufferProgress >= 0.99 || (self.currentBufferDuration - self.currentDuration) > 3 {
                 VideoPreloadManager.shared.start()
             } else {
                 VideoPreloadManager.shared.pause()
@@ -331,8 +344,10 @@ private extension VideoPlayerView {
     }
     
     @objc func playerItemDidReachEnd(notification: Notification) {
+        playToEndTime?()
         
         guard
+            isAutoReplay,
             pausedReason == .waitingKeepUp,
             (notification.object as? AVPlayerItem) == player?.currentItem else {
             return
