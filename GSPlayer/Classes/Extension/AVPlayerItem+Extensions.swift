@@ -56,7 +56,7 @@ extension AVPlayerItem {
     }
     
     convenience init(loader url: URL) {
-        if url.isFileURL {
+        if url.isFileURL || url.pathExtension == "m3u8" {
             self.init(url: url)
             return
         }
