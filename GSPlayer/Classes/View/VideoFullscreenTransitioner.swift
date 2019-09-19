@@ -7,6 +7,7 @@
 //
 
 import AVFoundation
+import UIKit
 
 public class VideoFullscreenTransitioner: NSObject {
     
@@ -18,6 +19,8 @@ public class VideoFullscreenTransitioner: NSObject {
     
     private var isBeingForward = true
     private var playerVideoGravity: AVLayerVideoGravity?
+    
+    private var animatorForCurrentTransition: UIViewImplicitlyAnimating?
     
 }
 
@@ -46,6 +49,9 @@ extension VideoFullscreenTransitioner: UIViewControllerAnimatedTransitioning {
     }
     
     public func interruptibleAnimator(using transitionContext: UIViewControllerContextTransitioning) -> UIViewImplicitlyAnimating {
+        if let animatorForCurrentSession = animatorForCurrentTransition {
+            return animatorForCurrentSession
+        }
         return isBeingForward ? presentAnimator(using: transitionContext) : dismissAnimator(using: transitionContext)
     }
     
@@ -103,9 +109,11 @@ private extension VideoFullscreenTransitioner {
         }
         
         animator.addCompletion { _ in
+            self.animatorForCurrentTransition = nil
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
         
+        animatorForCurrentTransition = animator
         return animator
     }
     
@@ -147,10 +155,12 @@ private extension VideoFullscreenTransitioner {
             fromView.removeFromSuperview()
             playerView.playerLayer.frame = playerView.bounds
             playerView.layer.insertSublayer(playerView.playerLayer, at: 0)
-            
+
+            self.animatorForCurrentTransition = nil
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
         
+        animatorForCurrentTransition = animator
         return animator
     }
     
