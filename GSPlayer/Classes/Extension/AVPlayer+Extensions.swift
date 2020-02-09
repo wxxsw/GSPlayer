@@ -7,6 +7,7 @@
 //
 
 import AVFoundation
+import UIKit
 
 public extension AVPlayer {
     
