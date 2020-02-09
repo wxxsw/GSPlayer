@@ -222,13 +222,18 @@ public extension VideoPlayerView {
     }
     
     /// Requests invocation of a block when specified times are traversed during normal playback.
-    func addBoundaryTimeObserver(forTimes times: [CMTime], queue: DispatchQueue? = nil, using: @escaping () -> Void) {
-        player?.addBoundaryTimeObserver(forTimes: times.map { NSValue(time: $0) }, queue: queue, using: using)
+    func addBoundaryTimeObserver(forTimes times: [CMTime], queue: DispatchQueue? = nil, using: @escaping () -> Void) -> Any? {
+        return player?.addBoundaryTimeObserver(forTimes: times.map { NSValue(time: $0) }, queue: queue, using: using)
     }
     
     /// Requests invocation of a block during playback to report changing time.
-    func addPeriodicTimeObserver(forInterval interval: CMTime, queue: DispatchQueue? = nil, using: @escaping (CMTime) -> Void) {
-        player?.addPeriodicTimeObserver(forInterval: interval, queue: queue, using: using)
+    func addPeriodicTimeObserver(forInterval interval: CMTime, queue: DispatchQueue? = nil, using: @escaping (CMTime) -> Void) -> Any? {
+        return player?.addPeriodicTimeObserver(forInterval: interval, queue: queue, using: using)
+    }
+    
+    /// Cancels a previously registered periodic or boundary time observer.
+    func removeTimeObserver(_ observer: Any) {
+        player?.removeTimeObserver(observer)
     }
     
 }
