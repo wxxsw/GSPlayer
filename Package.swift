@@ -9,11 +9,13 @@ let package = Package(
     products: [
         .library(
             name: "GSPlayer",
-            targets: ["GSPlayer"]),
+            targets: ["GSPlayer"]
+        ),
     ],
     targets: [
         .target(
             name: "GSPlayer",
-            path: "GSPlayer/Classes"),
+            path: "GSPlayer/Classes"
+        ),
     ]
 )
