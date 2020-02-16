@@ -185,7 +185,7 @@ public extension VideoPlayerView {
         
         if playerItem.isEnoughToPlay || url.isFileURL {
             state = .none
-            isLoaded = true
+            isLoaded = playerItem.status == .readyToPlay
             player.play()
         } else {
             state = .loading
