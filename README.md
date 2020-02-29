@@ -11,7 +11,7 @@
 
 - [x] Fully customizable UI.
 - [x] Easy to use API and callbacks.
-- [x] Built-in caching mechanism to support playback while downloading.
+- [x] Built-in caching mechanism to support playback while downloading (mp4).
 - [x] Can preload multiple videos at any time.
 - [x] Can be embedded into UITableView and UICollectionView.
 - [x] Provide full screen transition.
