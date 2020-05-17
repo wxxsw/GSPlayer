@@ -60,8 +60,4 @@ class BasicViewController: UIViewController {
         present(vc, animated: true, completion: nil)
     }
     
-    @IBAction func tapLandscapeFullscreen(_ sender: UIButton) {
-        print("TODO")
-    }
-    
 }
