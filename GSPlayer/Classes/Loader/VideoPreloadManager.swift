@@ -12,16 +12,20 @@ public class VideoPreloadManager: NSObject {
     
     public static let shared = VideoPreloadManager()
     
+    public var preloadByteCount: Int = 1024 * 1024 // = 1M
+    
     public var didStart: (() -> Void)?
     public var didPause: (() -> Void)?
     public var didFinish: ((Error?) -> Void)?
     
     private var downloader: VideoDownloader?
+    private var isAutoStart: Bool = true
     private var waitingQueue: [URL] = []
     
     public func set(waiting: [URL]) {
         downloader = nil
         waitingQueue = waiting
+        if isAutoStart { start() }
     }
     
     func start() {
@@ -29,6 +33,8 @@ public class VideoPreloadManager: NSObject {
             downloader?.resume()
             return
         }
+        
+        isAutoStart = true
         
         let url = waitingQueue.removeFirst()
         
@@ -40,9 +46,9 @@ public class VideoPreloadManager: NSObject {
         
         downloader = VideoDownloader(url: url, cacheHandler: cacheHandler)
         downloader?.delegate = self
-        downloader?.download(from: 0, length: 1024 * 1024)
+        downloader?.download(from: 0, length: preloadByteCount)
         
-        if cacheHandler.configuration.downloadedByteCount < 1024 * 1024 {
+        if cacheHandler.configuration.downloadedByteCount < preloadByteCount {
             didStart?()
         }
     }
@@ -50,6 +56,7 @@ public class VideoPreloadManager: NSObject {
     func pause() {
         downloader?.suspend()
         didPause?()
+        isAutoStart = false
     }
     
     func remove(url: URL) {
