@@ -80,6 +80,11 @@ Set the video URL to be preloaded. Preloading will automatically cache a short s
 VideoPreloadManager.shared.set(waiting: [URL])
 ```
 
+Set the preload size, the default value is 1024 * 1024, unit is byte.
+```swift
+VideoPlayer.preloadByteCount = 1024 * 1024 // = 1M
+```
+
 ### Fullscreen
 
 See demo.
