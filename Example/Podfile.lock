@@ -1,5 +1,5 @@
 PODS:
-  - GSPlayer (0.2.10)
+  - GSPlayer (0.2.11)
 
 DEPENDENCIES:
   - GSPlayer (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  GSPlayer: 39f84527c3437940d61c829dcd6b83c6fb901567
+  GSPlayer: 48a833e8bdde2d1d2343dfabcc5381766f1bbac3
 
 PODFILE CHECKSUM: a49c9158b72ea6343593d7347f4e8162b510b6bf
 
