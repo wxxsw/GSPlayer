@@ -153,12 +153,12 @@ open class VideoPlayerView: UIView {
     
 }
 
-public extension VideoPlayerView {
+extension VideoPlayerView {
     
     /// Play a video of the specified url.
     ///
     /// - Parameter url: Can be a local or remote URL
-    func play(for url: URL) {
+    open func play(for url: URL) {
         guard playerURL != url else {
             pausedReason = .waitingKeepUp
             player?.play()
@@ -200,41 +200,41 @@ public extension VideoPlayerView {
     /// Pause video.
     ///
     /// - Parameter reason: Reason for pause
-    func pause(reason: PausedReason) {
+    open func pause(reason: PausedReason) {
         pausedReason = reason
         player?.pause()
     }
     
     /// Continue playing video.
-    func resume() {
+    open func resume() {
         pausedReason = .waitingKeepUp
         player?.play()
     }
     
     /// Moves the playback cursor and invokes the specified block when the seek operation has either been completed or been interrupted.
-    func seek(to time: CMTime, completion: ((Bool) -> Void)? = nil) {
+    open func seek(to time: CMTime, completion: ((Bool) -> Void)? = nil) {
         player?.seek(to: time) { completion?($0) }
     }
     
     /// Moves the playback cursor within a specified time bound and invokes the specified block when the seek operation has either been completed or been interrupted.
-    func seek(to time: CMTime, toleranceBefore: CMTime, toleranceAfter: CMTime, completion: @escaping (Bool) -> Void) {
+    open func seek(to time: CMTime, toleranceBefore: CMTime, toleranceAfter: CMTime, completion: @escaping (Bool) -> Void) {
         player?.seek(to: time, toleranceBefore: toleranceBefore, toleranceAfter: toleranceAfter, completionHandler: completion)
     }
     
     /// Requests invocation of a block when specified times are traversed during normal playback.
     @discardableResult
-    func addBoundaryTimeObserver(forTimes times: [CMTime], queue: DispatchQueue? = nil, using: @escaping () -> Void) -> Any? {
+    open func addBoundaryTimeObserver(forTimes times: [CMTime], queue: DispatchQueue? = nil, using: @escaping () -> Void) -> Any? {
         return player?.addBoundaryTimeObserver(forTimes: times.map { NSValue(time: $0) }, queue: queue, using: using)
     }
     
     /// Requests invocation of a block during playback to report changing time.
     @discardableResult
-    func addPeriodicTimeObserver(forInterval interval: CMTime, queue: DispatchQueue? = nil, using: @escaping (CMTime) -> Void) -> Any? {
+    open func addPeriodicTimeObserver(forInterval interval: CMTime, queue: DispatchQueue? = nil, using: @escaping (CMTime) -> Void) -> Any? {
         return player?.addPeriodicTimeObserver(forInterval: interval, queue: queue, using: using)
     }
     
     /// Cancels a previously registered periodic or boundary time observer.
-    func removeTimeObserver(_ observer: Any) {
+    open func removeTimeObserver(_ observer: Any) {
         player?.removeTimeObserver(observer)
     }
     
