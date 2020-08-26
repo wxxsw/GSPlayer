@@ -53,6 +53,12 @@ extension FeedViewController: UITableViewDelegate {
         return tableView.frame.height
     }
     
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let cell = cell as? FeedCell {
+            cell.pause()
+        }
+    }
+    
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if !decelerate { check() }
     }
@@ -88,9 +94,5 @@ extension FeedViewController: UITableViewDelegate {
             .first
         
         visibleCell?.play()
-        
-        visibleCells
-            .filter { $0 != visibleCell }
-            .forEach { $0.pause() }
     }
 }
