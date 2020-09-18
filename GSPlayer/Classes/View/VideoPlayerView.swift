@@ -221,7 +221,7 @@ open class VideoPlayerView: UIView {
     
     /// Requests invocation of a block when specified times are traversed during normal playback.
     @discardableResult
-    open func addBoundaryTimeObserver(forTimes times: [CMTime], queue: DispatchQueue? = nil, using: @escaping () -> Void) -> Any? {
+    @nonobjc open func addBoundaryTimeObserver(forTimes times: [CMTime], queue: DispatchQueue? = nil, using: @escaping () -> Void) -> Any? {
         return player?.addBoundaryTimeObserver(forTimes: times.map { NSValue(time: $0) }, queue: queue, using: using)
     }
     
