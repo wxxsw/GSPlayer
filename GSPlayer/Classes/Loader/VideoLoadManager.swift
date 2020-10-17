@@ -67,4 +67,7 @@ extension VideoLoadManager: VideoLoaderDelegate {
         loaderMap.removeValue(forKey: loader.url)
     }
     
+    func loaderDidFinish(_ loader: VideoLoader) {
+        loaderMap.removeValue(forKey: loader.url)
+    }
 }
