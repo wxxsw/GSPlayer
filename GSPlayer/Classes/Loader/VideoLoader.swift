@@ -11,7 +11,7 @@ import AVFoundation
 protocol VideoLoaderDelegate: class {
     
     func loader(_ loader: VideoLoader, didFail error: Error)
-    
+    func loaderDidFinish(_ loader: VideoLoader)
 }
 
 class VideoLoader {
@@ -67,6 +67,8 @@ extension VideoLoader: VideoRequestLoaderDelegate {
         
         if let error = error {
             delegate?.loader(self, didFail: error)
+        } else {
+            delegate?.loaderDidFinish()
         }
     }
     
