@@ -198,6 +198,15 @@ open class VideoPlayerView: UIView {
         observe(playerItem: playerItem)
     }
     
+    /// Replay video.
+    ///
+    /// - Parameter resetCount: Reset replayCount
+    open func replay(resetCount: Bool = false) {
+        replayCount = resetCount ? 0 : replayCount + 1
+        player?.seek(to: .zero)
+        resume()
+    }
+    
     /// Continue playing video.
     open func resume() {
         pausedReason = .waitingKeepUp
