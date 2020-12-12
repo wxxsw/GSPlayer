@@ -1,9 +1,3 @@
-//
-//  VAVPlayerViewController.swift
-//
-//  Created by Karen He on 2020/12/10.
-//  Copyright © 2020 Visla. All rights reserved.
-//
 
 import Cocoa
 import AVKit
