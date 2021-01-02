@@ -12,6 +12,7 @@ public class VideoPreloadManager: NSObject {
     
     public static let shared = VideoPreloadManager()
     
+    public var preloadByteFrom: Int = 0
     public var preloadByteCount: Int = 1024 * 1024 // = 1M
     
     public var didStart: (() -> Void)?
@@ -46,7 +47,7 @@ public class VideoPreloadManager: NSObject {
         
         downloader = VideoDownloader(url: url, cacheHandler: cacheHandler)
         downloader?.delegate = self
-        downloader?.download(from: 0, length: preloadByteCount)
+        downloader?.download(from: preloadByteFrom, length: preloadByteCount)
         
         if cacheHandler.configuration.downloadedByteCount < preloadByteCount {
             didStart?()
