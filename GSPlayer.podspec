@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'GSPlayer'
-  s.version      = '0.2.18'
+  s.version      = '0.2.19'
   s.summary      = '⏯ Video player, support for caching, fullscreen transition and custom control view. 视频播放器，支持边下边播、全屏转场和自定义控制层'
   s.homepage     = 'https://github.com/wxxsw/GSPlayer'
   

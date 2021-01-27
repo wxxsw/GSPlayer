@@ -67,7 +67,7 @@ extension VideoLoader: VideoRequestLoaderDelegate {
         
         if let error = error {
             delegate?.loader(self, didFail: error)
-        } else {
+        } else if requestLoaders.isEmpty {
             delegate?.loaderDidFinish(self)
         }
     }
