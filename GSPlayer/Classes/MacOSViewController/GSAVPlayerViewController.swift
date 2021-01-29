@@ -126,7 +126,7 @@ open class GSAVPlayerViewController: NSViewController {
         self.player?.pause()
     }
     
-    func seekTime(duration: UInt64) {
+    open func seekTime(duration: UInt64) {
         let time = CMTime(seconds: Double(duration), preferredTimescale: 1)
         player?.seek(to: time)
     }
