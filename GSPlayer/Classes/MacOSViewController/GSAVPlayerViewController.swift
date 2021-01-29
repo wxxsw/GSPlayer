@@ -1,4 +1,4 @@
-
+#if os(macOS)
 import Cocoa
 import AVKit
 import AVFoundation
@@ -151,5 +151,4 @@ open class GSAVPlayerViewController: NSViewController {
         }
     }
 }
-
-
+#endif
