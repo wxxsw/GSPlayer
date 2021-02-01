@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import CoreMedia
 import GSPlayer
 
 class BasicViewController: UIViewController {
 
     @IBOutlet weak var playerView: VideoPlayerView!
+    @IBOutlet weak var progressSlider: UISlider!
     @IBOutlet weak var stateLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var muteButton: UIButton!
@@ -35,9 +37,24 @@ class BasicViewController: UIViewController {
             case .playing:
                 self.stateLabel.text = "playing"
             }
+            
+            switch state {
+            case .playing, .paused:
+                self.progressSlider.isEnabled = true
+            default:
+                self.progressSlider.isEnabled = false
+            }
         }
         
         playerView.play(for: URL(string: "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")!)
+        
+        playerView.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 60), using: { [weak self] _ in
+            guard let self = self else { return }
+            
+            self.progressSlider.value = Float(self.playerView.currentDuration / self.playerView.totalDuration)
+        })
+        
+        progressSlider.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapSlider(_:))))
     }
     
     @IBAction func tapPlay(_ sender: UIButton) {
@@ -60,4 +77,19 @@ class BasicViewController: UIViewController {
         present(vc, animated: true, completion: nil)
     }
     
+    @IBAction func tapSlider(_ gestureRecognizer: UIGestureRecognizer) {
+        let pointTapped: CGPoint = gestureRecognizer.location(in: self.view)
+
+        let positionOfSlider: CGPoint = progressSlider.frame.origin
+        let widthOfSlider: CGFloat = progressSlider.frame.size.width
+        let newValue = ((pointTapped.x - positionOfSlider.x) * CGFloat(progressSlider.maximumValue) / widthOfSlider)
+
+        progressSlider.setValue(Float(newValue), animated: false)
+        sliderValueChanged(progressSlider)
+    }
+    
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
+        let time = CMTime(seconds: playerView.totalDuration * Double(sender.value), preferredTimescale: 60)
+        playerView.seek(to: time)
+    }
 }
