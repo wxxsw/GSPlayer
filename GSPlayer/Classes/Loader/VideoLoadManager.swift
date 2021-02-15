@@ -14,7 +14,7 @@ public class VideoLoadManager: NSObject {
     
     public var reportError: ((Error) -> Void)?
     
-    public var customHTTPHeaderFields: [String: String] = [:]
+    public var customHTTPHeaderFields: ((URL) -> [String: String]?)?
     
     private(set) var loaderMap: [URL: VideoLoader] = [:]
     
