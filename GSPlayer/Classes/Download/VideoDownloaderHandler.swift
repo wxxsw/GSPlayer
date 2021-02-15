@@ -157,6 +157,10 @@ private extension VideoDownloaderHandler {
         let end = action.range.location + action.range.length - 1
         urlRequest.addValue("bytes=\(start)-\(end)", forHTTPHeaderField: "Range")
         
+        for field in VideoLoadManager.shared.customHTTPHeaderFields {
+            urlRequest.addValue(field.value, forHTTPHeaderField: field.key)
+        }
+        
         startOffset = start
         
         task = session?.dataTask(with: urlRequest)
