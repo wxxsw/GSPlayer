@@ -367,12 +367,13 @@ private extension VideoPlayerView {
     }
     
     @objc func playerItemDidReachEnd(notification: Notification) {
+        guard (notification.object as? AVPlayerItem) == player?.currentItem else {
+            return
+        }
+        
         playToEndTime?()
         
-        guard
-            isAutoReplay,
-            pausedReason == .waitingKeepUp,
-            (notification.object as? AVPlayerItem) == player?.currentItem else {
+        guard isAutoReplay, pausedReason == .waitingKeepUp else {
             return
         }
         
