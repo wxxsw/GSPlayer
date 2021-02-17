@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0183426FE489285A4C9218191309AE43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		0286EF34D129B67B46AB389C25812C46 /* Pods-GSPlayer_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459994E6891E6806B17DE99F0D43AE2 /* Pods-GSPlayer_Example-dummy.m */; };
 		0810EBBEFEB6FF8C74CB363D68712BDE /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EC5C2F9CEFDB105215B9C0D17CD538 /* String+Extensions.swift */; };
+		0ED1B19C091117555516F33014BE7EB6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		10A0E65F6E65AB4EC065B165DA7ADA3C /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042850916019AAC39083DCA63B6141E4 /* Double+Extensions.swift */; };
 		15724A9A0E1B871E2C4E312B5055DAD1 /* GSPlayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 148AD4B7C950BFF7BC2ABECAC82EFA73 /* GSPlayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16D4ECCD83F74DD6249C18330B84C9B8 /* Pods-GSPlayer_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B45F5EDF86BADC9959254B006DFF6BEA /* Pods-GSPlayer_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		16FCBE24A8D6F87449FB75289B439A45 /* VideoLoadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193E799015BA1F5B504B2DA844691B2B /* VideoLoadManager.swift */; };
 		19E3AE50E5D12F2DD9308B3C6DDD49D5 /* VideoDownloadInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2804A1F35F35696170A0A6FADBA1719F /* VideoDownloadInfo.swift */; };
 		1AF611F7DE173742A1F7565AEC12A7BC /* VideoCacheHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09099B685853F69CF0AB9CCA4089D286 /* VideoCacheHandler.swift */; };
@@ -20,7 +24,6 @@
 		5C56149593A6BCAFFD13B2C1C7803E92 /* AVPlayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD2C106EE0A42EE42AF3106F000485F /* AVPlayer+Extensions.swift */; };
 		61B251600028079FDB025F05BF2655EE /* AVAssetResourceLoadingRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6824D0F703292D0334DA5EB1AB7E5C5 /* AVAssetResourceLoadingRequest+Extensions.swift */; };
 		654C91499AEC022E8E86F0E661EA36EB /* VideoPreloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461890CDB75AB1C63FD737B3E17DB452 /* VideoPreloadManager.swift */; };
-		6B07141CAC14FF5D3D54E5B2C446975B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		70115C02C9F21B0CF8308E94B6F21088 /* AVPlayerItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BE17D504F4ABDC384AA0919524D6D5 /* AVPlayerItem+Extensions.swift */; };
 		7030629D39FEAEAACEDEAF296CB8FA73 /* VideoCacheAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF13D2774ADA07D7A41BD9010DAC74F /* VideoCacheAction.swift */; };
 		7D0C60FEDC20918E9124739D6FAF732F /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2530CDAB0D506F098F6653C3659F9F /* VideoPlayerView.swift */; };
@@ -29,17 +32,14 @@
 		9B7AED6629FDCDDFE5D8A39D56490D9F /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A8A6199993E6D295B8B7100E79485D /* Int+Extensions.swift */; };
 		A116C683883FAD8CD979185ADB15B793 /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102EAF3A9FF03E38FA6911844CD3A6A3 /* VideoInfo.swift */; };
 		B5B8735CAF270205B34ACF6D532E8F8C /* VideoLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B14F7F2CBF150847456414A578E33 /* VideoLoader.swift */; };
-		C2EF65BBC4BF796A79C181B1E48B16B0 /* Pods-GSPlayer_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B45F5EDF86BADC9959254B006DFF6BEA /* Pods-GSPlayer_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C4759B65B588AC8277A63E403000F201 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		E2D88533B3BDBD727427502B5426C2F7 /* VideoFullscreenPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8AFF4592F2B2D9EC38724364A079C /* VideoFullscreenPlayerView.swift */; };
 		EBBBDAEA4918A1A0A5DCBEA00E271613 /* VideoRequestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB83CBEE58A82CECBE5E8F8DDE0541BB /* VideoRequestLoader.swift */; };
 		FA234608DE377B943CF692F90B71F476 /* VideoDownloaderHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69EB99E0D7F26415C001B1FF066C786 /* VideoDownloaderHandler.swift */; };
 		FAE4758627184CE63BB75626B370798B /* GSPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5713B8A968594582916FB4387F1F0CB6 /* GSPlayer-dummy.m */; };
-		FF9972703BBCFFC82C57092A4E669847 /* Pods-GSPlayer_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459994E6891E6806B17DE99F0D43AE2 /* Pods-GSPlayer_Example-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		63A326264596B29BD1B8A9BCCC25A51A /* PBXContainerItemProxy */ = {
+		2CDB11ABF56EA556686A1C04ACE3327C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -60,7 +60,6 @@
 		1E2530CDAB0D506F098F6653C3659F9F /* VideoPlayerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		2804A1F35F35696170A0A6FADBA1719F /* VideoDownloadInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VideoDownloadInfo.swift; sourceTree = "<group>"; };
 		28EC5C2F9CEFDB105215B9C0D17CD538 /* String+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3461AAA35F5329583D2B42A8DE936C5B /* VideoFullscreenTransitioner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VideoFullscreenTransitioner.swift; sourceTree = "<group>"; };
 		3F51ACDE5AC0E4F8084E9700FF39E980 /* VideoDownloaderSessionDelegateHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VideoDownloaderSessionDelegateHandler.swift; sourceTree = "<group>"; };
 		44A8A6199993E6D295B8B7100E79485D /* Int+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
@@ -71,6 +70,7 @@
 		6155467E0890E3550B45CB65A5670EEA /* GSPlayer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GSPlayer-prefix.pch"; sourceTree = "<group>"; };
 		6459994E6891E6806B17DE99F0D43AE2 /* Pods-GSPlayer_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GSPlayer_Example-dummy.m"; sourceTree = "<group>"; };
 		66F2CF5EEBF5F9531D5931E08B6C2A6E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		753C0A8025CEE49C47DAB69A8EB3C8D1 /* GSPlayer.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = GSPlayer.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		75BF07BD21FB3076A2886D28AA171FF7 /* Pods-GSPlayer_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GSPlayer_Example.modulemap"; sourceTree = "<group>"; };
 		7DC56C82B3D24EE35905207F16D02066 /* Pods-GSPlayer_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GSPlayer_Example-frameworks.sh"; sourceTree = "<group>"; };
@@ -98,19 +98,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		48C4D0243F72CEB5A87F28EB574FF3F9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C4759B65B588AC8277A63E403000F201 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		790E0C85DE0A277EB402ACDAC1DA206E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B07141CAC14FF5D3D54E5B2C446975B /* Foundation.framework in Frameworks */,
+				0ED1B19C091117555516F33014BE7EB6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEB394528549C5D51DEB05B9175022B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0183426FE489285A4C9218191309AE43 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +157,14 @@
 			);
 			name = Cache;
 			path = GSPlayer/Classes/Cache;
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		667297AD6DC9D08C8ED060E019E4D38E /* Download */ = {
@@ -221,14 +229,6 @@
 			path = GSPlayer/Classes/View;
 			sourceTree = "<group>";
 		};
-		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
@@ -243,7 +243,7 @@
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -292,19 +292,19 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1437E693A5505E4A7E597A034ACD080F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C2EF65BBC4BF796A79C181B1E48B16B0 /* Pods-GSPlayer_Example-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7BC108FD59A18845D04F3E6BA9B99F09 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				15724A9A0E1B871E2C4E312B5055DAD1 /* GSPlayer-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDDEC74F5AD903C2E06BD1694E3D5AC1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16D4ECCD83F74DD6249C18330B84C9B8 /* Pods-GSPlayer_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,17 +331,17 @@
 		};
 		FF8880B20DDAA81F828F4C9C5567712D /* Pods-GSPlayer_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C17B5F4552A4622F79431D988720061A /* Build configuration list for PBXNativeTarget "Pods-GSPlayer_Example" */;
+			buildConfigurationList = B327B5F0895D70C8B3111212B516912A /* Build configuration list for PBXNativeTarget "Pods-GSPlayer_Example" */;
 			buildPhases = (
-				1437E693A5505E4A7E597A034ACD080F /* Headers */,
-				4AC9D691FED7F084BDA0AF371A865D26 /* Sources */,
-				48C4D0243F72CEB5A87F28EB574FF3F9 /* Frameworks */,
-				B2806206BF3DA059C6540241C3CDEC46 /* Resources */,
+				FDDEC74F5AD903C2E06BD1694E3D5AC1 /* Headers */,
+				C53ED2FBB8AD1E9D48A5AFAFCC6074E1 /* Sources */,
+				AEB394528549C5D51DEB05B9175022B8 /* Frameworks */,
+				26AC690600D8BB31F43F056EEFB20FDC /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5628085652957E4077BF5E15970FDD6B /* PBXTargetDependency */,
+				A2AA10AE783C27B355690241EDAA9681 /* PBXTargetDependency */,
 			);
 			name = "Pods-GSPlayer_Example";
 			productName = "Pods-GSPlayer_Example";
@@ -377,14 +377,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		649A182410F41525A66989DC1B264C85 /* Resources */ = {
+		26AC690600D8BB31F43F056EEFB20FDC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B2806206BF3DA059C6540241C3CDEC46 /* Resources */ = {
+		649A182410F41525A66989DC1B264C85 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -394,14 +394,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4AC9D691FED7F084BDA0AF371A865D26 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FF9972703BBCFFC82C57092A4E669847 /* Pods-GSPlayer_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7D5144808A12591D5B355880E662CD26 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -433,22 +425,94 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C53ED2FBB8AD1E9D48A5AFAFCC6074E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0286EF34D129B67B46AB389C25812C46 /* Pods-GSPlayer_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5628085652957E4077BF5E15970FDD6B /* PBXTargetDependency */ = {
+		A2AA10AE783C27B355690241EDAA9681 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GSPlayer;
 			target = 50D5373B27D8A6802F70DC3E85BF8716 /* GSPlayer */;
-			targetProxy = 63A326264596B29BD1B8A9BCCC25A51A /* PBXContainerItemProxy */;
+			targetProxy = 2CDB11ABF56EA556686A1C04ACE3327C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		196DFA3E4A09A28224918543529A1885 /* Debug */ = {
+		3565211DFB604CD6FE59132743B608BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C18AA592E1945F5CD7CCAA5A73911957 /* GSPlayer.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GSPlayer/GSPlayer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GSPlayer/GSPlayer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GSPlayer/GSPlayer.modulemap";
+				PRODUCT_MODULE_NAME = GSPlayer;
+				PRODUCT_NAME = GSPlayer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		38E14326EBA50916942A0BAB30BA25D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 139A3CE0D874E089DB196D5DCCC59B4F /* GSPlayer.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GSPlayer/GSPlayer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GSPlayer/GSPlayer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GSPlayer/GSPlayer.modulemap";
+				PRODUCT_MODULE_NAME = GSPlayer;
+				PRODUCT_NAME = GSPlayer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7EE7A78859F657F6BEFC651185B43192 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -471,6 +535,103 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		86BDCA2648F14C2E214197F458EBD05E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85A056EB3C8DF369C4914832F41ED151 /* Pods-GSPlayer_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GSPlayer_Example/Pods-GSPlayer_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GSPlayer_Example/Pods-GSPlayer_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D299434AB35E7FD6F7921C8EF24742FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -509,81 +670,12 @@
 			};
 			name = Debug;
 		};
-		6024538ECF7E84AF02EE9932CAAE5D70 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 139A3CE0D874E089DB196D5DCCC59B4F /* GSPlayer.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GSPlayer/GSPlayer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GSPlayer/GSPlayer-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GSPlayer/GSPlayer.modulemap";
-				PRODUCT_MODULE_NAME = GSPlayer;
-				PRODUCT_NAME = GSPlayer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		687CFAA51F516B2765B83D835F363EBF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85A056EB3C8DF369C4914832F41ED151 /* Pods-GSPlayer_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-GSPlayer_Example/Pods-GSPlayer_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-GSPlayer_Example/Pods-GSPlayer_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		ABFD2CA148F74A710C2332B8A4A463A1 /* Debug */ = {
+		DB8211A67FDF1DD1E1C70CA5A79C0299 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A5369CF830128AC98638A5D46E0C1609 /* Pods-GSPlayer_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -605,98 +697,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		EAD2E35BE5F773E180FBEB1EF6A3FC53 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C18AA592E1945F5CD7CCAA5A73911957 /* GSPlayer.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GSPlayer/GSPlayer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GSPlayer/GSPlayer-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GSPlayer/GSPlayer.modulemap";
-				PRODUCT_MODULE_NAME = GSPlayer;
-				PRODUCT_NAME = GSPlayer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -709,17 +709,17 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				196DFA3E4A09A28224918543529A1885 /* Debug */,
-				B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */,
+				D299434AB35E7FD6F7921C8EF24742FF /* Debug */,
+				7EE7A78859F657F6BEFC651185B43192 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C17B5F4552A4622F79431D988720061A /* Build configuration list for PBXNativeTarget "Pods-GSPlayer_Example" */ = {
+		B327B5F0895D70C8B3111212B516912A /* Build configuration list for PBXNativeTarget "Pods-GSPlayer_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ABFD2CA148F74A710C2332B8A4A463A1 /* Debug */,
-				687CFAA51F516B2765B83D835F363EBF /* Release */,
+				DB8211A67FDF1DD1E1C70CA5A79C0299 /* Debug */,
+				86BDCA2648F14C2E214197F458EBD05E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -727,8 +727,8 @@
 		F2EE0309C5707BDEAE2381B795CB5C9A /* Build configuration list for PBXNativeTarget "GSPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EAD2E35BE5F773E180FBEB1EF6A3FC53 /* Debug */,
-				6024538ECF7E84AF02EE9932CAAE5D70 /* Release */,
+				3565211DFB604CD6FE59132743B608BE /* Debug */,
+				38E14326EBA50916942A0BAB30BA25D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
