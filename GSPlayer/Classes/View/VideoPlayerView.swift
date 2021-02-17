@@ -152,6 +152,10 @@ open class VideoPlayerView: UIView {
         playerLayer.frame = bounds
         CATransaction.commit()
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 
 @objc extension VideoPlayerView {
