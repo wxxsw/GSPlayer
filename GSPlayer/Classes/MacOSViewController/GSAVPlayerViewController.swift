@@ -92,7 +92,7 @@ open class GSAVPlayerViewController: NSViewController {
     /// - Parameter url: Can be a local or remote URL
     open func play(for url: URL) {
         guard playerURL != url else {
-            pausedReason = .waitingKeepUp
+//            pausedReason = .waitingKeepUp
             player?.play()
             return
         }
@@ -106,7 +106,7 @@ open class GSAVPlayerViewController: NSViewController {
         playerItem.canUseNetworkResourcesForLiveStreamingWhilePaused = true
         
         self.playerURL = url
-        self.pausedReason = .waitingKeepUp
+//        self.pausedReason = .waitingKeepUp
         
         if playerItem.isEnoughToPlay || url.isFileURL {
             player?.play()
