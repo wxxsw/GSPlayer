@@ -9,6 +9,10 @@ open class GSAVPlayerViewController: NSViewController {
         static let seekTimeUpdated = "seekTimeUpdatedNotification"
     }
     
+    struct NotificationUserInfoKeys {
+        static let currentPlayTime = "currentPlayTime"
+    }
+    
     public enum PausedReason: Int {
         
         /// Pause because the player is not visible, stateDidChanged is not called when the buffer progress changes
@@ -156,7 +160,7 @@ open class GSAVPlayerViewController: NSViewController {
         }
         
         playerItemKeepUpObservation = playerItem.observe(\.isPlaybackLikelyToKeepUp) { [unowned self] item, _ in
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Self.NotificationNames.seekTimeUpdated), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Self.NotificationNames.seekTimeUpdated), object: nil, userInfo: [Self.NotificationUserInfoKeys.currentPlayTime:currentDuration])
             if item.isPlaybackLikelyToKeepUp {
                 if self.player?.rate == 0, self.pausedReason == .waitingKeepUp {
                     self.player?.play()
