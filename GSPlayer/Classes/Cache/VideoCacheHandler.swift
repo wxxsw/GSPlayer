@@ -79,6 +79,12 @@ public class VideoCacheHandler {
             return [VideoCacheAction(actionType: .remote, range: range)]
         }
         
+        if let info = configuration.info {
+            if range.location >= info.contentLength {
+                return []
+            }
+        }
+        
         var localRemoteActions = [VideoCacheAction]()
         
         for (i, action) in localActions.enumerated() {

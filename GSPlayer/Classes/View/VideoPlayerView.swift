@@ -152,6 +152,10 @@ open class VideoPlayerView: UIView {
         playerLayer.frame = bounds
         CATransaction.commit()
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 
 @objc extension VideoPlayerView {
@@ -367,12 +371,13 @@ private extension VideoPlayerView {
     }
     
     @objc func playerItemDidReachEnd(notification: Notification) {
+        guard (notification.object as? AVPlayerItem) == player?.currentItem else {
+            return
+        }
+        
         playToEndTime?()
         
-        guard
-            isAutoReplay,
-            pausedReason == .waitingKeepUp,
-            (notification.object as? AVPlayerItem) == player?.currentItem else {
+        guard isAutoReplay, pausedReason == .waitingKeepUp else {
             return
         }
         
