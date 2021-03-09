@@ -37,7 +37,7 @@ open class GSAVPlayerViewController: NSViewController {
     public private(set) var playerURL: URL?
     
     /// The reason the video was paused.
-    public private(set) var pausedReason: PausedReason = .waitingKeepUp
+    public private(set) var pausedReason: PausedReason = .userInteraction
     
     /// Played progress, value range 0-1.
     public var playProgress: Double {
