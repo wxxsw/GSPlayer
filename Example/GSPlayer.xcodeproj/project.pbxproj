@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A1A3B89262AC73200B8D802 /* BasicControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1A3B88262AC73200B8D802 /* BasicControlViewController.swift */; };
+		0A1A3B8F262AC74400B8D802 /* GSPlayerControlUIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A1A3B8D262AC74400B8D802 /* GSPlayerControlUIView.xib */; };
+		0A1A3B90262AC74400B8D802 /* GSPlayerControlUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1A3B8E262AC74400B8D802 /* GSPlayerControlUIView.swift */; };
+		0A1A3B94262ACB2600B8D802 /* BasicControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A1A3B93262ACB2600B8D802 /* BasicControlViewController.xib */; };
 		1C51A50524712C1A00EDD5D8 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C51A50324712C1A00EDD5D8 /* FeedViewController.swift */; };
 		1C51A50624712C1A00EDD5D8 /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C51A50424712C1A00EDD5D8 /* FeedViewController.xib */; };
 		1C51A50924712C7200EDD5D8 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C51A50724712C7200EDD5D8 /* FeedCell.swift */; };
@@ -23,6 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A1A3B88262AC73200B8D802 /* BasicControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicControlViewController.swift; sourceTree = "<group>"; };
+		0A1A3B8D262AC74400B8D802 /* GSPlayerControlUIView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSPlayerControlUIView.xib; sourceTree = "<group>"; };
+		0A1A3B8E262AC74400B8D802 /* GSPlayerControlUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSPlayerControlUIView.swift; sourceTree = "<group>"; };
+		0A1A3B93262ACB2600B8D802 /* BasicControlViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicControlViewController.xib; sourceTree = "<group>"; };
 		1C51A50324712C1A00EDD5D8 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		1C51A50424712C1A00EDD5D8 /* FeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
 		1C51A50724712C7200EDD5D8 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
@@ -57,6 +65,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A1A3B87262AC6C200B8D802 /* BasicControl */ = {
+			isa = PBXGroup;
+			children = (
+				0A1A3B88262AC73200B8D802 /* BasicControlViewController.swift */,
+				0A1A3B93262ACB2600B8D802 /* BasicControlViewController.xib */,
+				0A1A3B8C262AC74400B8D802 /* Control */,
+			);
+			path = BasicControl;
+			sourceTree = "<group>";
+		};
+		0A1A3B8C262AC74400B8D802 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				0A1A3B8E262AC74400B8D802 /* GSPlayerControlUIView.swift */,
+				0A1A3B8D262AC74400B8D802 /* GSPlayerControlUIView.xib */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
 		17B92A4B1655B2516D7B851C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +139,7 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				1CBF0E2B226C4CCB00E342EF /* MenuViewController.swift */,
 				1CBF0E2A226C40F500E342EF /* Basic */,
+				0A1A3B87262AC6C200B8D802 /* BasicControl */,
 				1C51A50024712BC400EDD5D8 /* Feed */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
@@ -212,8 +240,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				0A1A3B94262ACB2600B8D802 /* BasicControlViewController.xib in Resources */,
 				1C51A50624712C1A00EDD5D8 /* FeedViewController.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				0A1A3B8F262AC74400B8D802 /* GSPlayerControlUIView.xib in Resources */,
 				1C51A50A24712C7200EDD5D8 /* FeedCell.xib in Resources */,
 				1CBF0E34226C586D00E342EF /* BasicFullscreenViewController.xib in Resources */,
 				1CBF0E30226C4D9D00E342EF /* BasicViewController.xib in Resources */,
@@ -275,7 +305,9 @@
 				1C51A50524712C1A00EDD5D8 /* FeedViewController.swift in Sources */,
 				1CBF0E33226C586D00E342EF /* BasicFullscreenViewController.swift in Sources */,
 				1CBF0E2C226C4CCB00E342EF /* MenuViewController.swift in Sources */,
+				0A1A3B89262AC73200B8D802 /* BasicControlViewController.swift in Sources */,
 				1C51A50924712C7200EDD5D8 /* FeedCell.swift in Sources */,
+				0A1A3B90262AC74400B8D802 /* GSPlayerControlUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

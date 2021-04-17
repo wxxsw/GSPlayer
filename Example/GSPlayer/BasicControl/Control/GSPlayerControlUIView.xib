@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GSPlayerControlUIView" customModule="GSPlayer_Example" customModuleProvider="target">
+            <connections>
+                <outlet property="currentDuration_Label" destination="1GD-77-6Gc" id="kFi-aG-err"/>
+                <outlet property="duration_Slider" destination="Aad-Af-mO4" id="1gp-8q-kvW"/>
+                <outlet property="play_Button" destination="cAu-8v-zVP" id="uuo-Fd-tYq"/>
+                <outlet property="totalDuration_Label" destination="5gN-kx-QEC" id="Ob4-zm-evt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="PassthroughView" customModule="GSPlayer_Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAu-8v-zVP">
+                    <rect key="frame" x="183" y="4" width="48" height="48"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="play_48px"/>
+                    <connections>
+                        <action selector="onClicked_Play:" destination="-1" eventType="touchUpInside" id="GDl-0Y-mrP"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1GD-77-6Gc">
+                    <rect key="frame" x="10" y="65.5" width="34" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gN-kx-QEC">
+                    <rect key="frame" x="370" y="65.5" width="34" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <slider opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Aad-Af-mO4">
+                    <rect key="frame" x="52" y="58" width="310" height="31"/>
+                    <color key="minimumTrackTintColor" systemColor="systemYellowColor"/>
+                    <color key="thumbTintColor" systemColor="systemRedColor"/>
+                    <connections>
+                        <action selector="onValueChanged_DurationSlider:" destination="-1" eventType="valueChanged" id="WKC-fG-aEs"/>
+                    </connections>
+                </slider>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIu-eK-OBr">
+                    <rect key="frame" x="50" y="10" width="36" height="36"/>
+                    <state key="normal" image="replay_10_36px"/>
+                    <connections>
+                        <action selector="onClicked_Backward:" destination="-1" eventType="touchUpInside" id="T7f-SJ-iEA"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4S6-7F-8Jx">
+                    <rect key="frame" x="328" y="10" width="36" height="36"/>
+                    <state key="normal" image="forward_10_36px"/>
+                    <connections>
+                        <action selector="onClicked_Forward:" destination="-1" eventType="touchUpInside" id="CHE-Lh-pZC"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="4S6-7F-8Jx" firstAttribute="centerY" secondItem="cAu-8v-zVP" secondAttribute="centerY" id="158-rM-xAE"/>
+                <constraint firstItem="Aad-Af-mO4" firstAttribute="leading" secondItem="1GD-77-6Gc" secondAttribute="trailing" constant="10" id="2Kq-Qa-piD"/>
+                <constraint firstItem="Aad-Af-mO4" firstAttribute="centerY" secondItem="1GD-77-6Gc" secondAttribute="centerY" id="498-KN-Axs"/>
+                <constraint firstAttribute="bottom" secondItem="5gN-kx-QEC" secondAttribute="bottom" constant="20" id="5fC-hw-RQh"/>
+                <constraint firstItem="zIu-eK-OBr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="FgD-or-ZVr"/>
+                <constraint firstAttribute="trailing" secondItem="4S6-7F-8Jx" secondAttribute="trailing" constant="50" id="I4S-JK-KFu"/>
+                <constraint firstAttribute="bottom" secondItem="1GD-77-6Gc" secondAttribute="bottom" constant="20" id="NAP-S5-QQH"/>
+                <constraint firstItem="zIu-eK-OBr" firstAttribute="centerY" secondItem="cAu-8v-zVP" secondAttribute="centerY" id="Oqu-vN-5M8"/>
+                <constraint firstItem="1GD-77-6Gc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="T6J-Th-8Wt"/>
+                <constraint firstAttribute="trailing" secondItem="5gN-kx-QEC" secondAttribute="trailing" constant="10" id="aiz-oW-UEm"/>
+                <constraint firstItem="Aad-Af-mO4" firstAttribute="top" secondItem="cAu-8v-zVP" secondAttribute="bottom" constant="6" id="mw4-zS-pZt"/>
+                <constraint firstItem="cAu-8v-zVP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="pAG-si-Qa8"/>
+                <constraint firstItem="5gN-kx-QEC" firstAttribute="leading" secondItem="Aad-Af-mO4" secondAttribute="trailing" constant="10" id="vKY-gg-HUs"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="121.73913043478262" y="116.51785714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="forward_10_36px" width="36" height="36"/>
+        <image name="play_48px" width="48" height="48"/>
+        <image name="replay_10_36px" width="36" height="36"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

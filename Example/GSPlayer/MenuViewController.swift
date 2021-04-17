@@ -12,7 +12,16 @@ class MenuViewController: UITableViewController {
 
     enum Item: String, CaseIterable {
         case basic
+        case basicControl = "Basic Control"
         case feed
+        
+        var vcType: UIViewController.Type {
+            switch self {
+            case .basic: return BasicViewController.self
+            case .basicControl: return BasicControlViewController.self
+            case .feed: return FeedViewController.self
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -36,12 +45,7 @@ class MenuViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch Item.allCases[indexPath.row] {
-        case .basic:
-            navigationController?.pushViewController(BasicViewController(), animated: true)
-        case .feed:
-            navigationController?.pushViewController(FeedViewController(), animated: true)
-        }
+        navigationController?.pushViewController(Item.allCases[indexPath.row].vcType.init(), animated: true)
     }
 
 }
