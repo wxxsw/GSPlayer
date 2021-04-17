@@ -5,7 +5,7 @@
 //  Created by Gesen on 2019/4/20.
 //  Copyright © 2019 Gesen. All rights reserved.
 //
-
+#if !os(macOS)
 import AVFoundation
 import UIKit
 
@@ -165,4 +165,4 @@ private extension VideoFullscreenTransitioner {
     }
     
 }
-
+#endif

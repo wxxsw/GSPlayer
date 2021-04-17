@@ -1,9 +1,17 @@
-#if os(OSX)
+#if os(macOS)
 import Cocoa
 import AVKit
 import AVFoundation
 
 open class GSAVPlayerViewController: NSViewController {
+    
+    struct NotificationNames {
+        static let seekTimeUpdated = "seekTimeUpdatedNotification"
+    }
+    
+    struct NotificationUserInfoKeys {
+        static let currentPlayTime = "currentPlayTime"
+    }
     
     public enum PausedReason: Int {
         
@@ -29,7 +37,7 @@ open class GSAVPlayerViewController: NSViewController {
     public private(set) var playerURL: URL?
     
     /// The reason the video was paused.
-    public private(set) var pausedReason: PausedReason = .waitingKeepUp
+    public private(set) var pausedReason: PausedReason = .userInteraction
     
     /// Played progress, value range 0-1.
     public var playProgress: Double {
@@ -39,6 +47,10 @@ open class GSAVPlayerViewController: NSViewController {
     /// Played length in seconds.
     public var currentDuration: Double {
         return playerView.isReadyForDisplay ? player?.currentDuration ?? 0 : 0
+    }
+    
+    public var totalDuration: Double {
+        return playerView.isReadyForDisplay ? player?.totalDuration ?? 0 : 0
     }
     
     /// Buffered progress, value range 0-1.
@@ -84,7 +96,7 @@ open class GSAVPlayerViewController: NSViewController {
     /// - Parameter url: Can be a local or remote URL
     open func play(for url: URL) {
         guard playerURL != url else {
-            pausedReason = .waitingKeepUp
+//            pausedReason = .waitingKeepUp
             player?.play()
             return
         }
@@ -98,7 +110,7 @@ open class GSAVPlayerViewController: NSViewController {
         playerItem.canUseNetworkResourcesForLiveStreamingWhilePaused = true
         
         self.playerURL = url
-        self.pausedReason = .waitingKeepUp
+//        self.pausedReason = .waitingKeepUp
         
         if playerItem.isEnoughToPlay || url.isFileURL {
             player?.play()
@@ -116,6 +128,11 @@ open class GSAVPlayerViewController: NSViewController {
         self.player?.currentItem?.asset.cancelLoading()
         
         self.player?.pause()
+    }
+    
+    open func seekTime(duration: UInt64) {
+        let time = CMTime(seconds: Double(duration), preferredTimescale: 1)
+        player?.seek(to: time)
     }
     
     func observe(playerItem: AVPlayerItem?) {
@@ -143,6 +160,7 @@ open class GSAVPlayerViewController: NSViewController {
         }
         
         playerItemKeepUpObservation = playerItem.observe(\.isPlaybackLikelyToKeepUp) { [unowned self] item, _ in
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Self.NotificationNames.seekTimeUpdated), object: nil, userInfo: [Self.NotificationUserInfoKeys.currentPlayTime:currentDuration])
             if item.isPlaybackLikelyToKeepUp {
                 if self.player?.rate == 0, self.pausedReason == .waitingKeepUp {
                     self.player?.play()

@@ -5,7 +5,7 @@
 //  Created by Gesen on 2019/4/20.
 //  Copyright © 2019 Gesen. All rights reserved.
 //
-
+#if !os(macOS)
 import UIKit
 
 public class VideoFullscreenPlayerView: UIView {
@@ -25,3 +25,4 @@ public class VideoFullscreenPlayerView: UIView {
     }
 
 }
+#endif
