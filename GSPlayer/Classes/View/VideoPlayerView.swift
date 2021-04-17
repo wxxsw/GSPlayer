@@ -44,6 +44,12 @@ open class VideoPlayerView: UIView {
     /// An object that manages a player's visual output.
     public let playerLayer = AVPlayerLayer()
     
+    /// An object that provides the interface to control the player’s transport behavior.
+    public var player: AVPlayer? {
+        get { return playerLayer.player }
+        set { playerLayer.player = newValue }
+    }
+    
     /// URL currently playing.
     public private(set) var playerURL: URL?
     
@@ -258,14 +264,6 @@ public extension VideoPlayerView {
     func pause(reason: PausedReason) {
         pausedReason = reason
         pause()
-    }
-}
-
-private extension VideoPlayerView {
-    
-    var player: AVPlayer? {
-        get { return playerLayer.player }
-        set { playerLayer.player = newValue }
     }
 }
 
