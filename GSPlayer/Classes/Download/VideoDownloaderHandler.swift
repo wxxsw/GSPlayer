@@ -14,6 +14,7 @@ extension Notification.Name {
     
     public static let VideoDownloadDidFinished = Notification.Name("me.gesen.player.downloader.finished")
     
+    public static let VideoDownloadFinishCollectingMetrics = Notification.Name("me.gesen.player.downloader.metrics.collected")
 }
 
 private let delegateQueue: OperationQueue = {

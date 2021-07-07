@@ -58,6 +58,13 @@ extension VideoDownloaderSessionDelegateHandler: URLSessionDataDelegate {
         delegate?.urlSession(session, task: task, didCompleteWithError: error)
     }
     
+    func urlSession(_ session: URLSession, task: URLSessionTask, didFinishCollecting metrics: URLSessionTaskMetrics) {
+        NotificationCenter.default.post(
+            name: .VideoDownloadFinishCollectingMetrics,
+            object: nil,
+            userInfo: ["tasks": task, "metrics": metrics ]
+        )
+    }
 }
 
 private extension VideoDownloaderSessionDelegateHandler {

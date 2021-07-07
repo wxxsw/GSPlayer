@@ -31,10 +31,6 @@ public extension AVPlayerItem {
         return Double(CMTimeGetSeconds(asset.duration))
     }
     
-}
-
-extension AVPlayerItem {
-    
     static var loaderPrefix: String = "__loader__"
     
     var url: URL? {
@@ -45,6 +41,10 @@ extension AVPlayerItem {
         
         return urlString.replacingOccurrences(of: AVPlayerItem.loaderPrefix, with: "").url
     }
+    
+}
+
+extension AVPlayerItem {
     
     var isEnoughToPlay: Bool {
         guard
