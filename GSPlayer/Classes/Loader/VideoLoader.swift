@@ -8,7 +8,7 @@
 
 import AVFoundation
 
-protocol VideoLoaderDelegate: class {
+protocol VideoLoaderDelegate: AnyObject {
     
     func loader(_ loader: VideoLoader, didFail error: Error)
     func loaderDidFinish(_ loader: VideoLoader)

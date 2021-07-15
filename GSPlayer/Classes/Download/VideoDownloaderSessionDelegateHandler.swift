@@ -10,7 +10,7 @@ import Foundation
 
 private let bufferSize = 1024 * 256
 
-protocol VideoDownloaderSessionDelegateHandlerDelegate: class {
+protocol VideoDownloaderSessionDelegateHandlerDelegate: AnyObject {
     
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void)
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void)
