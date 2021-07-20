@@ -22,7 +22,7 @@ private let delegateQueue: OperationQueue = {
     return queue
 }()
 
-protocol VideoDownloaderHandlerDelegate: class {
+protocol VideoDownloaderHandlerDelegate: AnyObject {
     
     func handler(_ handler: VideoDownloaderHandler, didReceive response: URLResponse)
     func handler(_ handler: VideoDownloaderHandler, didReceive data: Data, isLocal: Bool)

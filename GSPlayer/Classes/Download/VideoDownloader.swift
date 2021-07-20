@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol VideoDownloaderDelegate: class {
+public protocol VideoDownloaderDelegate: AnyObject {
     
     func downloader(_ downloader: VideoDownloader, didReceive response: URLResponse)
     func downloader(_ downloader: VideoDownloader, didReceive data: Data)

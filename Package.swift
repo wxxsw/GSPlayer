@@ -1,11 +1,11 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.4
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "GSPlayer",
-    platforms: [.iOS(.v13),
+    platforms: [.iOS(.v10),
                 .macOS(.v10_12)],
     products: [
         .library(
