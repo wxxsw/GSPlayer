@@ -192,6 +192,7 @@ open class VideoPlayerView: UIView {
         self.playerURL = url
         self.pausedReason = .waitingKeepUp
         self.replayCount = 0
+        self.isReplay = false
         self.isLoaded = false
         
         if playerItem.isEnoughToPlay || url.isFileURL {
