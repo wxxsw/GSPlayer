@@ -255,6 +255,12 @@ open class VideoPlayerView: UIView {
     open func removeTimeObserver(_ observer: Any) {
         player?.removeTimeObserver(observer)
     }
+
+    public func destroy() {
+        player = nil
+        NotificationCenter.default.removeObserver(self)
+        removeFromSuperview()
+    }
 }
 
 public extension VideoPlayerView {
