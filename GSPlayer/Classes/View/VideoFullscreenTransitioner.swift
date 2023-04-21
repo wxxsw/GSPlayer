@@ -66,9 +66,9 @@ private extension VideoFullscreenTransitioner {
             let playerView = playerView,
             let fullscreenPlayerView = fullscreenPlayerView
             else { return UIViewPropertyAnimator() }
-        
+        guard let superView = playerView.superview else {return UIViewPropertyAnimator()}
         let containerView = transitionContext.containerView
-        let playerCenter = playerView.superview!.convert(playerView.center, to: containerView)
+        let playerCenter = superView.convert(playerView.center, to: containerView)
         
         toView.clipsToBounds = true
         toView.bounds = playerView.bounds
