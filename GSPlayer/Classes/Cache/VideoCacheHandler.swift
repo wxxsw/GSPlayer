@@ -126,12 +126,26 @@ public class VideoCacheHandler {
         return localRemoteActions
     }
     
-    func cache(data: Data, for range: NSRange) {
+    func cache(data: Data, for range: NSRange) -> Bool {
         objc_sync_enter(writeFileHandle)
+        if #available(iOS 13.4, *) {
+            do
+            {
+                try writeFileHandle.seekToEnd()
+            }
+            catch
+            {
+                objc_sync_exit(writeFileHandle)
+                return false
+            }
+        } else {
+            // Fallback on earlier versions
+        }
         writeFileHandle.seek(toFileOffset: UInt64(range.location))
         writeFileHandle.write(data)
         configuration.add(fragment: range)
         objc_sync_exit(writeFileHandle)
+        return true
     }
     
     func cachedData(for range: NSRange) -> Data {
