@@ -18,7 +18,7 @@ extension AVAssetResourceLoadingRequest {
             urlString.hasPrefix(prefix)
             else { return nil }
         
-        return urlString.replacingOccurrences(of: prefix, with: "").url
+        return urlString.replacingOccurrences(of: prefix, with: "").url?.deletingPathExtension()
     }
     
 }

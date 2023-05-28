@@ -43,7 +43,7 @@ extension AVPlayerItem {
             urlString.hasPrefix(AVPlayerItem.loaderPrefix)
             else { return nil }
         
-        return urlString.replacingOccurrences(of: AVPlayerItem.loaderPrefix, with: "").url
+        return urlString.replacingOccurrences(of: AVPlayerItem.loaderPrefix, with: "").url?.deletingPathExtension()
     }
     
     var isEnoughToPlay: Bool {
@@ -61,7 +61,7 @@ extension AVPlayerItem {
             return
         }
         
-        guard let loaderURL = (AVPlayerItem.loaderPrefix + url.absoluteString).url else {
+        guard let loaderURL = (AVPlayerItem.loaderPrefix + url.absoluteString + ".mp4").url else {
             VideoLoadManager.shared.reportError?(NSError(
                 domain: "me.gesen.player.loader",
                 code: -1,
