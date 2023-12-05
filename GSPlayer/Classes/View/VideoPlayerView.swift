@@ -275,7 +275,9 @@ open class VideoPlayerView: UIView {
         else {
             return
         }
-        player?.currentItem?.select(group.options[index], in: group)
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            self?.player?.currentItem?.select(group.options[index], in: group)
+        }
     }
 }
 
