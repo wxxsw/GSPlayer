@@ -14,4 +14,9 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.0'
   s.osx.deployment_target = "10.12"
   s.swift_versions = ['5.0']
+
+
+  s.xcconfig = {
+    'ENABLE_USER_SCRIPT_SANDBOXING' => 'NO',
+  }
 end
