@@ -264,6 +264,21 @@ open class VideoPlayerView: UIView {
         NotificationCenter.default.removeObserver(self)
         removeFromSuperview()
     }
+
+    open func playAudioTrack(index: Int) {
+        guard
+            let asset = player?.currentItem?.asset,
+            let group = asset.mediaSelectionGroup(
+                forMediaCharacteristic: AVMediaCharacteristic.audible
+            ),
+            group.options.count > index
+        else {
+            return
+        }
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            self?.player?.currentItem?.select(group.options[index], in: group)
+        }
+    }
 }
 
 public extension VideoPlayerView {
