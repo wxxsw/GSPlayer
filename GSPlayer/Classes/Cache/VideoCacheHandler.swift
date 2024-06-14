@@ -128,7 +128,7 @@ public class VideoCacheHandler {
     
     func cache(data: Data, for range: NSRange) -> Bool {
         objc_sync_enter(writeFileHandle)
-        if #available(iOS 13.4, *) {
+        if #available(iOS 13.4, *), #available(macOS 10.15.4, *) {
             do
             {
                 try writeFileHandle.seekToEnd()
