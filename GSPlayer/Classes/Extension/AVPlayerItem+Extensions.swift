@@ -37,20 +37,12 @@ extension AVPlayerItem {
     
     static var loaderPrefix: String = "loader-"
     
-    var url: URL? {
-        guard
-            let urlString = (asset as? AVURLAsset)?.url.absoluteString,
-            urlString.hasPrefix(AVPlayerItem.loaderPrefix)
-            else { return nil }
-        
-        return urlString.replacingOccurrences(of: AVPlayerItem.loaderPrefix, with: "").url?.deletingPathExtension()
-    }
-    
     var isEnoughToPlay: Bool {
         guard
-            let url = url,
+            let urlAsset = (asset as? AVURLAsset),
+            let url = urlAsset.url.removePrefix(),
             let configuration = try? VideoCacheManager.cachedConfiguration(for: url)
-            else { return false }
+        else { return false }
         
         return configuration.downloadedByteCount >= 1024 * 768
     }
@@ -61,7 +53,7 @@ extension AVPlayerItem {
             return
         }
         
-        guard let loaderURL = (AVPlayerItem.loaderPrefix + url.absoluteString + ".mp4").url else {
+        guard let loaderURL = url.forceMP4()?.addPrefix() else {
             VideoLoadManager.shared.reportError?(NSError(
                 domain: "me.gesen.player.loader",
                 code: -1,
