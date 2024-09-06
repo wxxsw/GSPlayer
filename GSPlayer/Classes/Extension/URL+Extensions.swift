@@ -9,22 +9,39 @@
 import AVFoundation
 
 extension URL {
-    private static let videoExtension = "mp4"
-    private static let prefix = AVPlayerItem.loaderPrefix
     
-    func forceMP4() -> URL? {
-        guard pathExtension != Self.videoExtension else { return self }
+    /// `AVAssetResourceLoaderDelegate` doesn't get called for URLs starting with `http` or `https`; adding this temporary prefix to the URL works.
+    private static let loaderPrefix = "loader-"
+    
+    /// `AVAssetResourceLoaderDelegate` doesn't get called for URLs with no extension; adding this temporary one works.
+    private static let tempExtension = "mp4"
+    
+    /// This extra prefix is so that we know to remove the added temporary extension when it's time to play the URL, if applicable.
+    private static let noExtensionPrefix = "noext-"
+    
+    var constructed: URL? {
+        if pathExtension.isEmpty {
+            let urlString = Self.loaderPrefix + Self.noExtensionPrefix + absoluteString
+            return urlString.url?.appendingPathExtension(Self.tempExtension)
+        } else {
+            let urlString = Self.loaderPrefix + absoluteString
+            return urlString.url
+        }
+    }
+    
+    var deconstructed: URL? {
+        var urlString = absoluteString
         
-        return deletingPathExtension().appendingPathExtension(Self.videoExtension)
-    }
-    
-    func addPrefix() -> URL? {
-        (Self.prefix + absoluteString).url
-    }
-    
-    func removePrefix() -> URL? {
-        guard absoluteString.hasPrefix(Self.prefix) else { return nil }
+        guard urlString.hasPrefix(Self.loaderPrefix) else { return nil }
         
-        return absoluteString.replacingOccurrences(of: Self.prefix, with: "").url
+        urlString = urlString.replacingOccurrences(of: Self.loaderPrefix, with: "")
+        
+        if urlString.hasPrefix(Self.noExtensionPrefix) {
+            urlString = urlString.replacingOccurrences(of: Self.noExtensionPrefix, with: "")
+            return urlString.url?.deletingPathExtension()
+        }
+        
+        return urlString.url
     }
+    
 }

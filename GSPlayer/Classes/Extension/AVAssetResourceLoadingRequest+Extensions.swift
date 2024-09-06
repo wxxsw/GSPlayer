@@ -11,7 +11,7 @@ import AVFoundation
 extension AVAssetResourceLoadingRequest {
     
     var url: URL? {
-        request.url?.removePrefix()
+        request.url?.deconstructed
     }
     
 }
