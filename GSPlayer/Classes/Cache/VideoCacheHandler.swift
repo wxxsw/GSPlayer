@@ -128,6 +128,13 @@ public class VideoCacheHandler {
     
     func cache(data: Data, for range: NSRange) -> Bool {
         objc_sync_enter(writeFileHandle)
+        defer {
+            objc_sync_exit(writeFileHandle)
+        }
+        guard let availableSpace = try? FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: false).resourceValues(forKeys: [.volumeAvailableCapacityKey]).volumeAvailableCapacity,
+              availableSpace > Int64(data.count) else {
+            return false
+        }
         if #available(iOS 13.4, *), #available(macOS 10.15.4, *) {
             do
             {
@@ -144,7 +151,6 @@ public class VideoCacheHandler {
         writeFileHandle.seek(toFileOffset: UInt64(range.location))
         writeFileHandle.write(data)
         configuration.add(fragment: range)
-        objc_sync_exit(writeFileHandle)
         return true
     }
     
