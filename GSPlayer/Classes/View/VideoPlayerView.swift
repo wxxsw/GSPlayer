@@ -174,8 +174,10 @@ open class VideoPlayerView: UIView {
     /// - Parameter url: Can be a local or remote URL
     open func play(for url: URL) {
         guard playerURL != url else {
-            pausedReason = .waitingKeepUp
-            player?.playImmediately(atRate: speedRate)
+            if player?.timeControlStatus == .paused {
+                pausedReason = .waitingKeepUp
+                player?.playImmediately(atRate: speedRate)
+            }
             return
         }
         
@@ -409,8 +411,12 @@ private extension VideoPlayerView {
         replay?()
         replayCount += 1
         
-        player?.seek(to: CMTime.zero)
-        player?.playImmediately(atRate: speedRate)
+        seek(to: CMTime.zero) { [weak self] finished in
+            guard let self else { return }
+            if (finished) {
+                self.player?.playImmediately(atRate: self.speedRate)
+            }
+        }
     }
     
 }
