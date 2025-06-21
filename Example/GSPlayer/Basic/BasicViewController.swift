@@ -47,7 +47,7 @@ class BasicViewController: UIViewController {
         }
         
         playerView.contentMode = .scaleAspectFill
-        playerView.play(for: URL(string: "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")!)
+        playerView.play(for: URL(string: "http://vfx.mtime.cn/Video/2019/06/29/mp4/190629004821240734.mp4")!)
         
         playerView.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 60), using: { [weak self] _ in
             guard let self = self else { return }
