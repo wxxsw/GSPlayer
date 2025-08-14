@@ -49,6 +49,7 @@ class VideoLoader {
     func remove(request: AVAssetResourceLoadingRequest) {
         if let index = requestLoaders.firstIndex(where: { $0.request == request }) {
             requestLoaders[index].finish()
+            guard requestLoaders.count >= index + 1 else { return }
             requestLoaders.remove(at: index)
         }
     }
