@@ -130,20 +130,26 @@ private extension VideoDownloaderHandler {
     
     func processActions() {
         guard !isCancelled else { return }
-        guard let action = actions.first else {
-            delegate?.handler(self, didFinish: nil)
+        
+        while !actions.isEmpty {
+            guard !isCancelled else { return }
+            
+            let action = actions.removeFirst()
+            
+            guard action.actionType == .remote else {
+                let data = cacheHandler.cachedData(for: action.range)
+                delegate?.handler(self, didReceive: data, isLocal: true)
+                continue
+            }
+            
+            startRemoteRequest(for: action)
             return
         }
         
-        actions.removeFirst()
-        
-        guard action.actionType == .remote else {
-            let data = cacheHandler.cachedData(for: action.range)
-            delegate?.handler(self, didReceive: data, isLocal: true)
-            processActions()
-            return
-        }
-        
+        delegate?.handler(self, didFinish: nil)
+    }
+    
+    private func startRemoteRequest(for action: VideoCacheAction) {
         sessionDelegate = VideoDownloaderSessionDelegateHandler(delegate: self)
         
         session = URLSession(
