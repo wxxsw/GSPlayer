@@ -21,6 +21,11 @@ public struct VideoCacheConfiguration: Codable {
         var configuration = try JSONDecoder().decode(VideoCacheConfiguration.self, from: data)
         configuration.filePath = filePath
         
+        if configuration.info?.contentLength ?? 0 <= 0 {
+            try? FileManager.default.removeItem(atPath: filePath)
+            return VideoCacheConfiguration(filePath: filePath)
+        }
+        
         return configuration
     }
     
