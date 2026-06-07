@@ -65,9 +65,7 @@ extension VideoDownloader: VideoDownloaderHandlerDelegate {
         
         if info == nil, let httpResponse = response as? HTTPURLResponse {
             
-            let contentLength = String(httpResponse
-                .value(forHeaderKey: "Content-Range")?
-                .split(separator: "/").last ?? "0").int ?? 0
+            let contentLength = httpResponse.contentLength
             
             let contentType = httpResponse
                 .value(forHeaderKey: "Content-Type") ?? ""
@@ -76,11 +74,13 @@ extension VideoDownloader: VideoDownloaderHandlerDelegate {
                 .value(forHeaderKey: "Accept-Ranges")?
                 .contains("bytes") ?? false
             
-            cacheHandler.set(info: VideoInfo(
-                contentLength: contentLength,
-                contentType: contentType,
-                isByteRangeAccessSupported: isByteRangeAccessSupported
-            ))
+            if contentLength > 0 {
+                cacheHandler.set(info: VideoInfo(
+                    contentLength: contentLength,
+                    contentType: contentType,
+                    isByteRangeAccessSupported: isByteRangeAccessSupported
+                ))
+            }
         }
         
         delegate?.downloader(self, didReceive: response)
@@ -97,6 +97,23 @@ extension VideoDownloader: VideoDownloaderHandlerDelegate {
 }
 
 private extension HTTPURLResponse {
+    
+    var contentLength: Int {
+        if let contentRangeLength = value(forHeaderKey: "Content-Range")?
+            .split(separator: "/")
+            .last
+            .flatMap({ String($0).int }),
+           contentRangeLength > 0 {
+            return contentRangeLength
+        }
+        
+        if let contentLength = value(forHeaderKey: "Content-Length")?.int,
+           contentLength > 0 {
+            return contentLength
+        }
+        
+        return expectedContentLength > 0 ? Int(expectedContentLength) : 0
+    }
     
     func value(forHeaderKey key: String) -> String? {
         return allHeaderFields
