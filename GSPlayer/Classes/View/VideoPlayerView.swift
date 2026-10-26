@@ -60,6 +60,8 @@ open class VideoPlayerView: UIView {
     
     /// The reason the video was paused.
     public private(set) var pausedReason: PausedReason = .waitingKeepUp
+
+    private var isRetryingAfterPause = false
     
     /// Number of replays.
     public private(set) var replayCount: Int = 0
@@ -196,6 +198,7 @@ open class VideoPlayerView: UIView {
         self.player = player
         self.playerURL = url
         self.pausedReason = .waitingKeepUp
+        self.isRetryingAfterPause = false
         self.replayCount = 0
         self.isReplay = false
         self.isLoaded = false
@@ -344,10 +347,23 @@ private extension VideoPlayerView {
             case .paused:
                 guard !self.isReplay else { break }
                 self.state = .paused(playProgress: self.playProgress, bufferProgress: self.bufferProgress)
-                if self.pausedReason == .waitingKeepUp { player.playImmediately(atRate: speedRate) }
+                // retry async, a sync retry can re-enter this observer and overflow the stack (#102)
+                if self.pausedReason == .waitingKeepUp, !self.isRetryingAfterPause {
+                    self.isRetryingAfterPause = true
+                    DispatchQueue.main.async { [weak self, weak player] in
+                        guard let self, let player,
+                              player.timeControlStatus == .paused,
+                              self.pausedReason == .waitingKeepUp,
+                              let item = player.currentItem,
+                              item.status == .readyToPlay,
+                              item.isPlaybackLikelyToKeepUp else { return }
+                        player.playImmediately(atRate: self.speedRate)
+                    }
+                }
             case .waitingToPlayAtSpecifiedRate:
                 break
             case .playing:
+                self.isRetryingAfterPause = false
                 if self.playerLayer.isReadyForDisplay, player.rate > 0 {
                     self.isLoaded = true
                     if self.playProgress == 0, self.isReplay { self.isReplay = false; break }
